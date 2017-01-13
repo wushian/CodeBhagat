@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<title>Web API Client (using JQuery/AJAX) for Region</title>
+	<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+</head>
+<body>
+	<h2>Web API Client (using JQuery/AJAX) for sa106</h2>
+	<table style="border:1px solid gray;border-collapse:separate;">
+		<tr>
+			<td>Get All sa106 Data </td>
+			<td>&nbsp;</td>
+			<td><button onclick="GetRegion();return false;">Get All</button></td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Get/Delete sa106 Data by ID</td>
+			<td><input type="text" id="txtID" value="1" /></td>
+			<td><button onclick="Getsa106ByID();return false;">Get By ID</button></td>
+			<td><button onclick="Deletesa106ByID();return false;">Delete By ID</button></td>
+		</tr>
+		<tr>
+			<td>Get/Delete sa106 Data by Filter Criteria</td>
+			<td><input type="text" id="txtFilterExpression" value="gkey=1" /></td>
+			<td><button onclick="Getsa106By();return false;">Get By</button></td>
+			<td><button onclick="Getsa106By();return false;">Delete By</button></td>
+		</tr>
+		<tr>
+			<td>Get/Delete sa106 Data by Page</td>
+			<td>
+				<input type="text" id="filterExpression" value="gkey=1" /><br />
+				<input type="text" id="sortExpression" value="gkey" /><br />
+				<input type="text" id="pageIndex" value="1" /><br />
+				<input type="text" id="PageSize" value="10" /><br />
+			</td>
+			<td><button onclick="Getsa106ByPage();return false;">Get By Page</button></td>
+			<td>&nbsp;</td>
+		</tr>
+	</table>
+	<textarea id="output" rows="5" cols="50"></textarea>
+    <div id="outputData" class="scroll" style="text-align:center;"></div>
+	
+	<script type="text/javascript">
+    function Getsa106() {
+        $.support.cors = true;
+        $.ajax({
+            url: 'http://localhost:8080/api/sa106',
+            type: 'GET',
+            dataType: 'json',
+            success: function (data) {
+				// Write logic to display/process your data
+                //WriteResponse(data);
+				var jsonData = JSON.stringify(data);
+				$("#output").text(jsonData);
+            },
+			error: function (jqXHR, textStatus, errorThrown) {
+				alert(textStatus + ':' + errorThrown + '\n');
+			}
+        });
+    }
+
+    function Getsa106By() {
+        $.support.cors = true;
+		var filterExpression = $('#txtFilterExpression').val();  
+        $.ajax({
+            url: 'http://localhost:8080/api/sa106?filterExpression=' + filterExpression,
+			// url: 'http://localhost:8080/api/sa106?filterExpression="gkey=1"',
+            type: 'GET',
+            dataType: 'json',            
+            success: function (data) {
+				// Write logic to display/process your data
+                //WriteResponse(data);
+				var jsonData = JSON.stringify(data);
+				$("#output").text(jsonData);
+            },
+			error: function (jqXHR, textStatus, errorThrown) {
+				alert(textStatus + ':' + errorThrown + '\n');
+			}
+        });
+    }
+	
+	function Getsa106ByPage() {
+        $.support.cors = true;
+		var filterExpression = $('#filterExpression').val();  
+		var sortExpression = $('#filterExpression').val();  
+		var pageIndex = $('#pageIndex').val();  
+		var pageSize = $('#pageSize').val();  
+        $.ajax({
+			url: 'http://localhost:8080/api/sa106?filterExpression="' + filterExpression + '"&sortExpression="' + sortExpression + '"&pageIndex=' + pageIndex + '&pageSize=' + pageSize + '&rowsCount=0',
+            // url: 'http://localhost:8080/api/sa106?filterExpression="gkey=1"&sortExpression="gkey"&pageIndex=1&pageSize=10&rowsCount=0',
+            type: 'GET',
+            dataType: 'json',
+            success: function (data) {
+				// Write logic to display/process your data
+                //WriteResponse(data);
+				var jsonData = JSON.stringify(data);
+				$("#output").text(jsonData);
+            },
+            error: function (x, y, z) {
+                alert('ERROR: Could not retrieve the data\n');
+            }
+        });
+    }
+	
+	function Getsa106ByID(id) {
+        $.support.cors = true;
+        var id = $('#txtID').val();        
+        $.ajax({
+            url: 'http://localhost:8080/api/sa106/'+id,
+            // url: 'http://localhost:26198/api/sa106/1',
+            type: 'GET',
+            dataType: 'json',
+            success: function (data) {
+				// Write logic to display/process your data
+                //Showsa106(data);
+				var jsonData = JSON.stringify(data);
+				$("#output").text(jsonData);
+            },
+			error: function (jqXHR, textStatus, errorThrown) {
+				alert(textStatus + ':' + errorThrown + '\n');
+			}
+        });
+    }
+
+    function Addsa106() {
+        $.support.cors = true;
+        var sa106 = {
+			// Update this based on your input fields
+            ID: $('#txtgkey').val(),
+            Name: $('#txtName').val(),
+            Department: $('#txtDescr').val(),
+        };
+        
+        $.ajax({
+            url: 'http://localhost:8080/api/sa106',
+            type: 'POST',
+            data:JSON.stringify(sa106),            
+            contentType: "application/json;charset=utf-8",
+            success: function (data) {
+				// Write logic to display/process your data
+                WriteResponse(data);
+            },
+			error: function (jqXHR, textStatus, errorThrown) {
+				alert(textStatus + ':' + errorThrown + '\n');
+			}
+        });
+    }
+
+	function Editsa106() {
+        $.support.cors = true;
+        var sa106 = {
+			// Update this based on your input fields
+            ID: $('#txtgkey').val(),
+            Name: $('#txtName').val(),
+            Department: $('#txtDescr').val(),
+        };
+        
+        $.ajax({
+            url: 'http://localhost:8080/api/sa106',
+            type: 'PUT',
+            data:JSON.stringify(sa106),            
+            contentType: "application/json;charset=utf-8",
+            success: function (data) {
+				// Write logic to display/process your data
+                WriteResponse(data);
+            },
+			error: function (jqXHR, textStatus, errorThrown) {
+				alert(textStatus + ':' + errorThrown + '\n');
+			}
+        });
+    }
+	
+    function Deletesa106ByID(id) {
+        $.support.cors = true;
+        var id = $('#txtID').val();        
+        $.ajax({
+            url: 'http://localhost:8080/api/sa106/'+id,
+            type: 'DELETE',            
+            contentType: "application/json;charset=utf-8",
+            success: function (data) {
+				// Write logic to display/process your data
+                //WriteResponse(data);
+				var jsonData = JSON.stringify(data);
+				$("#output").text(jsonData);
+            },
+			error: function (jqXHR, textStatus, errorThrown) {
+				alert(textStatus + ':' + errorThrown + '\n');
+			}
+        });
+    }
+
+	function Deletesa106By(filterExpression) {
+        $.support.cors = true;
+        var filterExpression = $('#txtFilterExpression').val();
+        $.ajax({
+            url: 'http://localhost:8080/api/sa106?filterExpression=' + filterExpression,
+            type: 'DELETE',
+            contentType: "application/json;charset=utf-8",
+            success: function (data) {
+				// Write logic to display/process your data
+                //WriteResponse(data);
+				var jsonData = JSON.stringify(data);
+				$("#output").text(jsonData);
+            },
+			error: function (jqXHR, textStatus, errorThrown) {
+				alert(textStatus + ':' + errorThrown + '\n');
+			}
+        });
+    }
+
+    function WriteResponse(sa106) {
+		// Update this based on your data fields
+        var strResult = "<table><th>ID</th><th>Name</th><th>Description</th>";
+        $.each(sa106, function (index, sa106) {
+            strResult += "<tr><td>" + sa106.ID + "</td><td> " + sa106.Name + "</td><td>" + sa106.Descr + "</td></tr>";
+        });
+        strResult += "</table>";
+        $("#outputData").html(strResult);
+    }
+
+    function Showsa106(sa106) {
+        if (sa106 != null) {
+			// Update this based on your data fields
+            var strResult = "<table><th>ID</th><th>Name</th><th>Description</th>";
+            strResult += "<tr><td>" + sa106.ID + "</td><td> " + sa106.Name + "</td><td>" + sa106.Descr + "</td></tr>";
+            strResult += "</table>";
+            $("#outputData").html(strResult);
+        }
+        else {
+            $("#outputData").html("No Results To Display");
+        }
+    }
+	</script>
+</body>
+</html>

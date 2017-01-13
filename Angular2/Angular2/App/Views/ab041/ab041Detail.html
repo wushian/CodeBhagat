@@ -1,0 +1,68 @@
+<div data-ng-controller="ab041Details as vmab041">
+	<div class="panel panel-primary">
+		<div class="panel-heading">ab041 Detail</div>
+		<div class="panel-body detail">
+			<div class="form-horizontal">
+				
+			<div class="form-group">
+				<label class="col-xs-3 col-sm-2 control-label">Gkey:</label>
+				<div class="col-xs-9 col-sm-10">
+					{{vmab041.ab041.gkey}}
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-xs-3 col-sm-2 control-label">Bbankno:</label>
+				<div class="col-xs-9 col-sm-10">
+					{{vmab041.ab041.bbankno}}
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-xs-3 col-sm-2 control-label">Changedd:</label>
+				<div class="col-xs-9 col-sm-10">
+					{{vmab041.ab041.changedd}}
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-xs-3 col-sm-2 control-label">Bbank Name:</label>
+				<div class="col-xs-9 col-sm-10">
+					{{vmab041.ab041.bbankname}}
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-xs-3 col-sm-2 control-label">Ebbank Name:</label>
+				<div class="col-xs-9 col-sm-10">
+					{{vmab041.ab041.ebbankname}}
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-xs-3 col-sm-2 control-label">Tel:</label>
+				<div class="col-xs-9 col-sm-10">
+					{{vmab041.ab041.tel}}
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-xs-3 col-sm-2 control-label">Fax:</label>
+				<div class="col-xs-9 col-sm-10">
+					{{vmab041.ab041.fax}}
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-xs-3 col-sm-2 control-label">Address:</label>
+				<div class="col-xs-9 col-sm-10">
+					{{vmab041.ab041.address}}
+				</div>
+			</div>
+			</div>
+		</div>
+		<div class="panel-footer clearfix">
+			<div class="pull-left ng-isolate-scope">
+				<a class="btn btn-danger" ng-click="vmab041.deleteab041(vmab041.ab041.gkey)"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+			</div>
+			<div class="pull-right ng-isolate-scope">
+				<a class="btn btn-primary" href="/#/ab041/Edit/{{vmab041.ab041.gkey}}"><span class="glyphicon glyphicon-pencil"></span> Edit</a>
+				<a class="btn btn-primary" href="/#/ab041"><span class="glyphicon glyphicon-arrow-left"></span> Back to List</a>
+			</div>
+		</div>
+	</div>
+    
+</div>

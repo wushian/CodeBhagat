@@ -1,0 +1,538 @@
+@{
+    ViewBag.Title = "sa106 Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Sa106 Details</h3>
+@using (Html.BeginForm())
+{
+	{
+    <fieldset>
+        <div class="row">
+                &nbsp;
+        </div>
+	<div class="panel panel-default">
+		<div class="panel-heading"><b>Sa106 Details</b></div>
+		<div class="panel-body">
+				<dl class ="dl-horizontal">
+				
+				<dt>
+					<label>Gkey:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.gkey)
+				</dd>
+			
+				<dt>
+					<label>Ord Date:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.orddate)
+				</dd>
+			
+				<dt>
+					<label>Mr200gkey:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.mr200gkey)
+				</dd>
+			
+				<dt>
+					<label>Issue Date:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.issuedate)
+				</dd>
+			
+				<dt>
+					<label>Pono:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.pono)
+				</dd>
+			
+				<dt>
+					<label>Salesno:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.salesno)
+				</dd>
+			
+				<dt>
+					<label>Returnno:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.returnno)
+				</dd>
+			
+				<dt>
+					<label>Return Date:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.returndate)
+				</dd>
+			
+				<dt>
+					<label>Deliveryno:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.deliveryno)
+				</dd>
+			
+				<dt>
+					<label>Ret Type:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.rettype)
+				</dd>
+			
+				<dt>
+					<label>X Type:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.xtype)
+				</dd>
+			
+				<dt>
+					<label>Ba205gkey:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.ba205gkey)
+				</dd>
+			
+				<dt>
+					<label>Pickup Date:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.pickupdate)
+				</dd>
+			
+				<dt>
+					<label>Cancel Date:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.canceldate)
+				</dd>
+			
+				<dt>
+					<label>Ba100gkey:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.ba100gkey)
+				</dd>
+			
+				<dt>
+					<label>Ba102gkey:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.ba102gkey)
+				</dd>
+			
+				<dt>
+					<label>Ba103gkey:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.ba103gkey)
+				</dd>
+			
+				<dt>
+					<label>Ba119gkey:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.ba119gkey)
+				</dd>
+			
+				<dt>
+					<label>Ba118gkey:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.ba118gkey)
+				</dd>
+			
+				<dt>
+					<label>Ba121gkey:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.ba121gkey)
+				</dd>
+			
+				<dt>
+					<label>Ba104gkey:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.ba104gkey)
+				</dd>
+			
+				<dt>
+					<label>Ba209gkey:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.ba209gkey)
+				</dd>
+			
+				<dt>
+					<label>Returnamt:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.returnamt)
+				</dd>
+			
+				<dt>
+					<label>Canadaamt:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.canadaamt)
+				</dd>
+			
+				<dt>
+					<label>Freightamt:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.freightamt)
+				</dd>
+			
+				<dt>
+					<label>Proceamt:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.proceamt)
+				</dd>
+			
+				<dt>
+					<label>Insuredamt:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.insuredamt)
+				</dd>
+			
+				<dt>
+					<label>Pickupamt:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.pickupamt)
+				</dd>
+			
+				<dt>
+					<label>Discountamt:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.discountamt)
+				</dd>
+			
+				<dt>
+					<label>Vouchersamt:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.vouchersamt)
+				</dd>
+			
+				<dt>
+					<label>Reservatamt:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.reservatamt)
+				</dd>
+			
+				<dt>
+					<label>Activityamt:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.activityamt)
+				</dd>
+			
+				<dt>
+					<label>Totalfreight:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.totalfreight)
+				</dd>
+			
+				<dt>
+					<label>Totaltreatment:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.totaltreatment)
+				</dd>
+			
+				<dt>
+					<label>Totalinsurance:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.totalinsurance)
+				</dd>
+			
+				<dt>
+					<label>Totalamt:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.totalamt)
+				</dd>
+			
+				<dt>
+					<label>Pairs:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.pairs)
+				</dd>
+			
+				<dt>
+					<label>Remark:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.remark)
+				</dd>
+			
+				<dt>
+					<label>Ba005gkey:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.ba005gkey)
+				</dd>
+			
+				<dt>
+					<label>Modify Date:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.modifydate)
+				</dd>
+			
+				<dt>
+					<label>Revise Date:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.revisedate)
+				</dd>
+			
+				<dt>
+					<label>Approve:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.approve)
+				</dd>
+			
+				<dt>
+					<label>Aes101gkey:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.aes101gkey)
+				</dd>
+			
+				<dt>
+					<label>Ses101gkey:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.ses101gkey)
+				</dd>
+			
+				<dt>
+					<label>Es101gkey:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.es101gkey)
+				</dd>
+			
+				<dt>
+					<label>Replication Create:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.replication_create)
+				</dd>
+			
+				<dt>
+					<label>Replication Up Date:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.replication_update)
+				</dd>
+			
+				<dt>
+					<label>Rownum:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.rownum)
+				</dd>
+			
+				<dt>
+					<label>Addproceamt:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.addproceamt)
+				</dd>
+			
+				<dt>
+					<label>Lossproceamt:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.lossproceamt)
+				</dd>
+			
+				<dt>
+					<label>Virementamt:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.virementamt)
+				</dd>
+			
+				<dt>
+					<label>Ba040gkey:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.ba040gkey)
+				</dd>
+			
+				<dt>
+					<label>Ba040gkey1:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.ba040gkey1)
+				</dd>
+			
+				<dt>
+					<label>Receivable Date:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.receivabledate)
+				</dd>
+			
+				<dt>
+					<label>Receivableamt:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.receivableamt)
+				</dd>
+			
+				<dt>
+					<label>Virement Date:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.virementdate)
+				</dd>
+			
+				<dt>
+					<label>Salesamt:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.salesamt)
+				</dd>
+			
+				<dt>
+					<label>Collchk:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.collchk)
+				</dd>
+			
+				<dt>
+					<label>Payfreight:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.payfreight)
+				</dd>
+			
+				<dt>
+					<label>Strchk:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.strchk)
+				</dd>
+			
+				<dt>
+					<label>Noamount:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.noamount)
+				</dd>
+			
+				<dt>
+					<label>Totalamount:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.totalamount)
+				</dd>
+			
+				<dt>
+					<label>Ba101gkey:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.ba101gkey)
+				</dd>
+			
+				<dt>
+					<label>Remittance Date:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.remittancedate)
+				</dd>
+			
+				<dt>
+					<label>Remittancetime:</label>
+				</dt>
+				<dd>
+					@Html.Encode(Model.remittancetime)
+				</dd>
+			
+				</dl>
+		</div>
+		<div class="panel-footer">
+			<div class="row">
+				<div class="pull-left">
+					<a id="btnDelete" class="btn btn-danger" onclick='DeleteItem("@Model.gkey","@Model.mr200gkey")'><span class="glyphicon glyphicon-remove"></span> Delete</a>
+				</div>
+				<div class="pull-right">
+					<a href="@Url.Action("Edit", "sa106", new { id=Model.gkey })" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span> Edit</a>
+					&nbsp;
+					<a href="@Url.Action("Index", "sa106")" class="btn btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Back to List</a>
+				</div>
+			</div>
+		</div>
+	</div>
+    </fieldset>
+	}
+}
+
+<style type="text/css">
+	span.k-link {
+		padding: 6px !important;
+	}
+</style>
+
+<!-- Confirm Model Dialog -->
+<div id="deleteModal" class="modal fade" role="dialog">
+	<div class="modal-dialog" style="vertical-align: middle;height: 100%;margin-top:250px">
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header" style="background-color:whitesmoke;padding:9px 15px;">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 id="deleteTitle" class="modal-title">Delete record?</h4>
+			</div>
+			<div class="modal-body">
+				<p id="deleteMessage"></p>
+			</div>
+			<div class="modal-footer" style="background-color:whitesmoke;padding:9px 15px;">
+				<a class="btn btn-default" id="YesDeleteBtn">Yes</a>
+				<button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Script to Delete Record -->
+<script type="text/javascript">
+    function DeleteItem(id, name) {
+        $("#deleteModal").modal('show');
+        $("#deleteModal #YesDeleteBtn").attr("href", "/sa106/Delete/" + id);
+        $("#deleteMessage").text("Are you sure you want to delete this sa106 - " + name + " ?");
+    }
+</script>
+
+
+
+@section Scripts
+{
+    <script src="~/Scripts/Kendoui/kendo.all.min.js"></script>
+	<script src="~/Scripts/Kendoui/jszip.min.js"></script>
+    @*<script type="text/javascript" src="http://demos.telerik.com/kendo-ui/content/shared/js/jszip.min.js"></script>*@
+
+
+}
+

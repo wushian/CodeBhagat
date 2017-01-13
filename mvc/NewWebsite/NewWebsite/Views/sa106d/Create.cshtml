@@ -1,0 +1,80 @@
+@model NewWebsite.Models.sa106dData
+
+@{
+    ViewBag.Title = "Create sa106d";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Create Sa106d</h3>
+    @using (Html.BeginForm()) {
+		{
+        <fieldset>
+            <div class="row">
+                    &nbsp;
+            </div>
+            <div class="panel panel-default">
+				<div class="panel-heading"><b>Add Sa106d</b></div>
+                <div class="panel-body">
+					<table>
+					
+			<tr>
+                <td><label for="gkey">Gkey:</label></td>
+				<td>@Html.TextBox("gkey", Model.gkey, new { @id="lblgkey", @class = "form-control", @readonly = "readonly"}) </td>
+            </tr>
+			<tr>
+                <td><label for="serialno">Serialno:</label></td>
+				<td>@Html.TextBox("serialno", Model.serialno, new { @id="txtserialno", @class = "form-control"}) @Html.ValidationMessage("serialno", "", new { @class = "text-danger" }) </td>
+            </tr>
+			<tr>
+                <td><label for="sa106gkey">Sa106gkey:</label></td>
+				<td>@Html.TextBox("sa106gkey", Model.sa106gkey, new { @id="txtsa106gkey", @class = "form-control"}) @Html.ValidationMessage("sa106gkey", "", new { @class = "text-danger" }) </td>
+            </tr>
+			<tr>
+                <td><label for="ba212gkey">Ba212gkey:</label></td>
+				<td>@Html.TextBox("ba212gkey", Model.ba212gkey, new { @id="txtba212gkey", @class = "form-control"}) @Html.ValidationMessage("ba212gkey", "", new { @class = "text-danger" }) </td>
+            </tr>
+			<tr>
+                <td><label for="agument">Agument:</label></td>
+				<td>
+						<div class="input-group">
+							<div class="input-group-addon">$</div>
+							@Html.TextBox("agument", Model.agument, new { @id="txtagument", @class = "form-control text-right", @style="width:150px;" }) 
+						</div>
+					@Html.ValidationMessage("agument", "", new { @class = "text-danger" }) </td>
+            </tr>
+			<tr>
+                <td><label for="amount">Amount:</label></td>
+				<td>
+						<div class="input-group">
+							<div class="input-group-addon">$</div>
+							@Html.TextBox("amount", Model.amount, new { @id="txtamount", @class = "form-control text-right", @style="width:150px;" }) 
+						</div>
+					@Html.ValidationMessage("amount", "", new { @class = "text-danger" }) </td>
+            </tr>
+			<tr>
+                <td><label for="remark">Remark:</label></td>
+				<td>@Html.TextArea("remark", Model.remark.ToString(), new { @id="txtremark", @class = "form-control", @rows=5, @cols=40})@Html.ValidationMessage("remark", "", new { @class = "text-danger" }) </td>
+            </tr>
+			<tr>
+                <td><label for="replication_create">Replication Create:</label></td>
+				<td>@Html.TextBox("replication_create", Model.replication_create, new { @id="txtreplication_create", @class = "form-control"}) @Html.ValidationMessage("replication_create", "", new { @class = "text-danger" }) </td>
+            </tr>
+			<tr>
+                <td><label for="replication_update">Replication Up Date:</label></td>
+				<td>@Html.TextBox("replication_update", Model.replication_update, new { @id="txtreplication_update", @class = "form-control"}) @Html.ValidationMessage("replication_update", "", new { @class = "text-danger" }) </td>
+            </tr>
+					</table>
+				</div>
+		        <div class="panel-footer">
+					<div class="row">
+						<div class="pull-right">
+							<button type="submit" value="Create" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-disk"></span> Save</button>
+							&nbsp;
+							<a href="@Url.Action("Index", "sa106d")" class="btn btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Back to List</a>
+						</div>
+					</div>
+				</div>
+			</div>
+        </fieldset>
+		}
+    }

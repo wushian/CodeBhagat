@@ -1,0 +1,29 @@
+<div>
+    <div class="col-md-2">
+        <label class="label label-info">
+            Records
+            <span ng-bind="[paging.currentPage == 1?1:((paging.currentPage - 1) * (paging.pageSize)+1)]"></span> to
+            <span ng-bind="[paging.currentPage == paging.totalPages?paging.totalRecords:(paging.pageSize) * (paging.currentPage)]"></span>
+            of {{paging.totalRecords}}
+        </label>
+    </div>
+    <div class="col-md-6" style="padding-right:2px;">
+        <div class="pull-right">
+            <div class="btn-toolbar" role="toolbar">
+                <div class="btn-group">
+                    <label class="paginate_page mrb" style="">Page Size: </label>
+                    <select id="pagesizeddl" ng-model="paging.pageSize" ng-options="v for v in paging.pagingSizeValues track  by v" ng-change="paging.currentPage =1"></select>
+                    <button ng-click="paging.currentPage=1" ng-disabled="paging.currentPage<=1" class="btn-sm btn-atag" style="cursor: pointer;"><i class="glyphicon glyphicon-fast-backward"></i></button>
+                    <button ng-click="paging.currentPage=paging.currentPage-1;" ng-disabled="paging.currentPage<=1" class="btn-sm btn-atag" style="cursor: pointer;"><i class="glyphicon glyphicon-step-backward"></i></button>
+                    <label class="paginate_page mrb">Page </label>
+                    <select id="pageNoddl" class="paginate_page mrb" data-ng-model="paging.currentPage">
+                        <option ng-selected="{{$index+1}} == {{paging.currentPage}}" ng-repeat="n in [] | range:paging.totalPages" value="{{$index+1}}">{{$index+1}}</option>
+                    </select>
+                    <label class="paginate_page mrb">&nbsp;of&nbsp;   {{paging.totalPages}}</label>
+                    <button ng-click="paging.currentPage = paging.currentPage + 1;" ng-disabled="paging.currentPage >= paging.totalPages" class="btn-sm btn-atag" style="cursor: pointer;"><i class="glyphicon glyphicon-step-forward"></i></button>
+                    <button ng-click="[paging.currentPage=paging.totalPages]; " ng-disabled="paging.currentPage >= paging.totalPages" class="btn-sm btn-atag" style="cursor: pointer;"><i class="glyphicon glyphicon-fast-forward"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

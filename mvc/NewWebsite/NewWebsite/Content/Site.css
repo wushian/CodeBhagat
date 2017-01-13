@@ -1,0 +1,102 @@
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+::-ms-clear {
+  display: none;
+}
+
+
+.editor-label 
+{
+    margin: 1em 0 0 0;
+}
+
+.editor-field 
+{
+    margin:0.5em 0 0 0;
+}
+
+
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error
+{
+    color: #ff0000;
+}
+
+.field-validation-valid
+{
+    display: none;
+}
+
+.input-validation-error
+{
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors
+{
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-valid
+{
+    display: none;
+}
+
+/* Kendo Grid Styles Override */ 
+.k-grid td
+{
+    padding: 0.4em 0.4em
+}
+
+.k-grid-pager {
+	padding: 0 0;
+	margin:0 0;
+}
+
+.k-grid-header {
+	padding: 0px 0px;
+	margin:0 0;
+	font-weight: bold;
+}
+
+.k-grid-header .k-header {
+	color: black;
+	font-weight: bold;
+	padding: 0 0;
+}
+
+.k-grid-header .k-link:link {
+	color: black;
+	padding: 0 0;
+}
+
+.k-grid .k-alt {
+   background-color: whitesmoke; /* specify the alternate background-color */
+}

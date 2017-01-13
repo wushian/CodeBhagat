@@ -1,0 +1,575 @@
+@model NewWebsite.Models.sa106aData
+@{
+    ViewBag.Title = "Sa106a List";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h3>Sa106a List</h3>
+
+<!-- Search Panel -->
+<div class="panel panel-default">
+    <div class="panel-heading">
+		<a data-toggle="collapse" href="#collapse1"><b>Search Sa106a:</b></a>
+	</div>
+	<div id="collapse1" class="panel-collapse collapse">
+		<div class="panel-body">
+			<table>
+
+			<tr>
+                <td><label for="gkey">Gkey:</label></td>
+				<td>@Html.TextBox("gkey", Model.gkey, new { @id="txtgkey", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="serialno">Serialno:</label></td>
+				<td>@Html.TextBox("serialno", Model.serialno, new { @id="txtserialno", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="sa106gkey">Sa106gkey:</label></td>
+				<td>@Html.TextBox("sa106gkey", Model.sa106gkey, new { @id="txtsa106gkey", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="ba101gkey">Ba101gkey:</label></td>
+				<td>@Html.TextBox("ba101gkey", Model.ba101gkey, new { @id="txtba101gkey", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="ba110gkey">Ba110gkey:</label></td>
+				<td>@Html.TextBox("ba110gkey", Model.ba110gkey, new { @id="txtba110gkey", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="ba113gkey">Ba113gkey:</label></td>
+				<td>@Html.TextBox("ba113gkey", Model.ba113gkey, new { @id="txtba113gkey", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="mr200gkey">Mr200gkey:</label></td>
+				<td>@Html.TextBox("mr200gkey", Model.mr200gkey, new { @id="txtmr200gkey", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="mr200agkey">Mr200agkey:</label></td>
+				<td>@Html.TextBox("mr200agkey", Model.mr200agkey, new { @id="txtmr200agkey", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="ba120gkey">Ba120gkey:</label></td>
+				<td>@Html.TextBox("ba120gkey", Model.ba120gkey, new { @id="txtba120gkey", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="ba121gkey">Ba121gkey:</label></td>
+				<td>@Html.TextBox("ba121gkey", Model.ba121gkey, new { @id="txtba121gkey", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="ba106gkey">Ba106gkey:</label></td>
+				<td>@Html.TextBox("ba106gkey", Model.ba106gkey, new { @id="txtba106gkey", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="shipmentdate">Shipment Date:</label></td>
+				<td>@Html.TextBox("shipmentdate", Model.shipmentdate, new { @id="txtshipmentdate", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="canceldate">Cancel Date:</label></td>
+				<td>@Html.TextBox("canceldate", Model.canceldate, new { @id="txtcanceldate", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="cancelreason">Cancelreason:</label></td>
+				<td>@Html.TextArea("cancelreason", Model.cancelreason.ToString(), new { @id="txtcancelreason", @class = "form-control", @rows=5, @cols=40})</td>
+            </tr>
+			<tr>
+                <td><label for="activityid">Activity Id:</label></td>
+				<td>@Html.TextArea("activityid", Model.activityid.ToString(), new { @id="txtactivityid", @class = "form-control", @rows=5, @cols=40})</td>
+            </tr>
+			<tr>
+                <td><label for="activityname">Activity Name:</label></td>
+				<td>@Html.TextArea("activityname", Model.activityname.ToString(), new { @id="txtactivityname", @class = "form-control", @rows=5, @cols=40})</td>
+            </tr>
+			<tr>
+                <td><label for="quantity">Quantity:</label></td>
+				<td>@Html.TextBox("quantity", Model.quantity, new { @id="txtquantity", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="nodisprice">Nodisprice:</label></td>
+				<td>@Html.TextBox("nodisprice", Model.nodisprice, new { @id="txtnodisprice", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="noamount">Noamount:</label></td>
+				<td>@Html.TextBox("noamount", Model.noamount, new { @id="txtnoamount", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="disprice">Disprice:</label></td>
+				<td>@Html.TextBox("disprice", Model.disprice, new { @id="txtdisprice", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="cancelqty">Cancelqty:</label></td>
+				<td>@Html.TextBox("cancelqty", Model.cancelqty, new { @id="txtcancelqty", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="cancelamt">Cancelamt:</label></td>
+				<td>@Html.TextBox("cancelamt", Model.cancelamt, new { @id="txtcancelamt", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="outquantity">Outquantity:</label></td>
+				<td>@Html.TextBox("outquantity", Model.outquantity, new { @id="txtoutquantity", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="retquantity">Retquantity:</label></td>
+				<td>@Html.TextBox("retquantity", Model.retquantity, new { @id="txtretquantity", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="prepono">Prepono:</label></td>
+				<td>@Html.TextBox("prepono", Model.prepono, new { @id="txtprepono", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="mr210gkey">Mr210gkey:</label></td>
+				<td>@Html.TextBox("mr210gkey", Model.mr210gkey, new { @id="txtmr210gkey", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="mr210agkey">Mr210agkey:</label></td>
+				<td>@Html.TextBox("mr210agkey", Model.mr210agkey, new { @id="txtmr210agkey", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="remark">Remark:</label></td>
+				<td>@Html.TextArea("remark", Model.remark.ToString(), new { @id="txtremark", @class = "form-control", @rows=5, @cols=40})</td>
+            </tr>
+			<tr>
+                <td><label for="replication_create">Replication Create:</label></td>
+				<td>@Html.TextBox("replication_create", Model.replication_create, new { @id="txtreplication_create", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="replication_update">Replication Up Date:</label></td>
+				<td>@Html.TextBox("replication_update", Model.replication_update, new { @id="txtreplication_update", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="inventoryQty">Inventoryqty:</label></td>
+				<td>@Html.TextBox("inventoryQty", Model.inventoryQty, new { @id="txtinventoryQty", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="outstockQty">Outstockqty:</label></td>
+				<td>@Html.TextBox("outstockQty", Model.outstockQty, new { @id="txtoutstockQty", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="tstdqty">Tstdqty:</label></td>
+				<td>@Html.TextBox("tstdqty", Model.tstdqty, new { @id="txttstdqty", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="ba126gkey">Ba126gkey:</label></td>
+				<td>@Html.TextBox("ba126gkey", Model.ba126gkey, new { @id="txtba126gkey", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="webgkey">Webgkey:</label></td>
+				<td>@Html.TextBox("webgkey", Model.webgkey, new { @id="txtwebgkey", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="canadaamt">Canadaamt:</label></td>
+				<td>
+						<div class="input-group">
+							<div class="input-group-addon">$</div>
+							@Html.TextBox("canadaamt", Model.canadaamt, new { @id="txtcanadaamt", @class = "form-control text-right", @style="width:150px;" }) 
+						</div>
+					</td>
+            </tr>
+			<tr>
+                <td><label for="ba117gkey">Ba117gkey:</label></td>
+				<td>@Html.TextBox("ba117gkey", Model.ba117gkey, new { @id="txtba117gkey", @class = "form-control"}) </td>
+            </tr>
+			</table>
+		</div>
+		<div class="panel-footer">
+			<div class="row">
+				<div class="pull-right">
+					<button id="btnSearch" type="submit" value="Search" class="btn btn-primary">Search</button>&nbsp;
+					<a href="@Url.Action("Index", "sa106a")" class="btn btn-primary">Clear</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Kendo Grid -->
+<div>
+    <div id="grid"></div>
+</div>
+
+<!-- Script for Kendo Grid -->
+@section Scripts
+{
+    <script src="~/Scripts/Kendoui/jszip.min.js"></script>
+    <script src="~/Scripts/Kendoui/kendo.all.min.js"></script>
+    <script>
+        $(document).ready(function () {
+			var btns = "<a href='/sa106a/Edit/#: gkey #'><i class='glyphicon glyphicon-pencil'></i></a>&nbsp;";
+			btns += "<a href='/sa106a/Details/#: gkey #'><i class='glyphicon glyphicon-search'></i></a>&nbsp;";
+			btns += "<a data-url='/sa106a/Delete/#: gkey #' style='cursor:pointer' data-sa106gkey='#: sa106gkey #' onclick='DeleteItem(this)'><i class='glyphicon glyphicon-trash'></i></a>";
+
+            $("#grid").kendoGrid({
+                toolbar: [{text: "Add", template: '<a class="k-button" href="/sa106a/Create">Add</a>' }, { name: "excel", text: "" }, { name: "pdf", text: "" }],
+                excel: {
+                    fileName: "sa106a.xlsx",
+                    allPages: true
+                },
+                pdf: {
+                    fileName: "sa106a.pdf",
+                    allPages: true
+                },
+                dataSource: {
+                    transport: {
+                        read: "/sa106a/GetList",
+                        parameterMap: function (data, type) {
+                        	if (type == "read") {
+                        		// send take as "$top" and skip as "$skip"
+                        		var sortExpr = "";
+                        		if (data.sort)
+                        			sortExpr = data.sort[0]['field'] + ' ' + data.sort[0]['dir']
+                        		return {
+                        			sortExpression: sortExpr,
+                        			pageSize: data.pageSize,
+                        			pageIndex: data.page,
+									skip: data.skip,
+									filter: data.filter
+                        		};
+                        	}
+                        }
+                    },
+                    schema: {
+                        data: function (result) {
+                            return result.data;
+                        },
+                        total: function (result) {
+                            return result.pageSize;
+                        },
+                        model: {
+                            fields: {
+								gkey: { type: "string"},
+								serialno: { type: "number"},
+								sa106gkey: { type: "string"},
+								ba101gkey: { type: "string"},
+								ba110gkey: { type: "string"},
+								ba113gkey: { type: "string"},
+								mr200gkey: { type: "string"},
+								mr200agkey: { type: "string"},
+								ba120gkey: { type: "string"},
+								ba121gkey: { type: "string"},
+								ba106gkey: { type: "string"},
+								shipmentdate: { type: "datetime"},
+								canceldate: { type: "datetime"},
+								cancelreason: { type: "string"},
+								activityid: { type: "string"},
+								activityname: { type: "string"},
+								quantity: { type: "number"},
+								nodisprice: { type: "number"},
+								noamount: { type: "number"},
+								disprice: { type: "number"},
+								cancelqty: { type: "number"},
+								cancelamt: { type: "number"},
+								outquantity: { type: "number"},
+								retquantity: { type: "number"},
+								prepono: { type: "string"},
+								mr210gkey: { type: "string"},
+								mr210agkey: { type: "string"},
+								remark: { type: "string"},
+								replication_create: { type: "datetime"},
+								replication_update: { type: "datetime"},
+								inventoryQty: { type: "number"},
+								outstockQty: { type: "number"},
+								tstdqty: { type: "number"},
+								ba126gkey: { type: "string"},
+								webgkey: { type: "string"},
+								canadaamt: { type: "number"},
+								ba117gkey: { type: "string"},
+
+                            }
+                        }
+                    },
+                    serverPaging: true,
+                    serverFiltering: true,
+                    serverSorting: true
+                },
+                pageable: {
+                    refresh: true,
+                    pageSize: 10,
+                    allPages: true,
+                    pageSizes: [10, 25, 50, 100, 'All'],
+                    buttonCount: 5
+                },
+                columnMenu: true,
+                filterable: {
+                    extra: false,
+                    operators: {
+                        string: {
+                            startswith: "Starts with",
+                            eq: "Is equal to",
+                            neq: "Is not equal to"
+                        }
+                    }
+                },
+                sortable: true,
+                columns: [
+                    {
+                        template: btns,
+                        title: "Action",
+						width: 100
+                    },
+						{ field: 'gkey', title: 'Gkey', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'serialno', title: 'Serialno', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'sa106gkey', title: 'Sa106gkey', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'ba101gkey', title: 'Ba101gkey', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'ba110gkey', title: 'Ba110gkey', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'ba113gkey', title: 'Ba113gkey', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'mr200gkey', title: 'Mr200gkey', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'mr200agkey', title: 'Mr200agkey', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'ba120gkey', title: 'Ba120gkey', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'ba121gkey', title: 'Ba121gkey', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'ba106gkey', title: 'Ba106gkey', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'shipmentdate', title: 'Shipment Date', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" }, template: "#= kendo.toString(kendo.parseDate(shipmentdate, 'yyyy-MM-dd'), 'MM/dd/yyyy') #" },
+						{ field: 'canceldate', title: 'Cancel Date', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" }, template: "#= kendo.toString(kendo.parseDate(canceldate, 'yyyy-MM-dd'), 'MM/dd/yyyy') #" },
+						{ field: 'cancelreason', title: 'Cancelreason', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'activityid', title: 'Activity Id', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'activityname', title: 'Activity Name', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'quantity', title: 'Quantity', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'nodisprice', title: 'Nodisprice', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'noamount', title: 'Noamount', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'disprice', title: 'Disprice', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'cancelqty', title: 'Cancelqty', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'cancelamt', title: 'Cancelamt', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'outquantity', title: 'Outquantity', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'retquantity', title: 'Retquantity', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'prepono', title: 'Prepono', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'mr210gkey', title: 'Mr210gkey', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'mr210agkey', title: 'Mr210agkey', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'remark', title: 'Remark', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'replication_create', title: 'Replication_create', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" }, template: "#= kendo.toString(kendo.parseDate(replication_create, 'yyyy-MM-dd'), 'MM/dd/yyyy') #" },
+						{ field: 'replication_update', title: 'Replication_up Date', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" }, template: "#= kendo.toString(kendo.parseDate(replication_update, 'yyyy-MM-dd'), 'MM/dd/yyyy') #" },
+						{ field: 'inventoryQty', title: 'Inventoryqty', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'outstockQty', title: 'Outstockqty', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'tstdqty', title: 'Tstdqty', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'ba126gkey', title: 'Ba126gkey', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'webgkey', title: 'Webgkey', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'canadaamt', title: 'Canadaamt', sortable: true, hidden: false, attributes: { "style": "text-align:Right;" } },
+						{ field: 'ba117gkey', title: 'Ba117gkey', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } }
+
+                ]
+            });
+        });
+        $("#btnSearch").click(function () {
+            $filter = new Array();
+			
+			
+			$gkey = $("#txtgkey").val();
+            if ($gkey) {
+                $filter.push({ field: "gkey", operator: "contains", value: $gkey });
+            }
+
+			$serialno = $("#txtserialno").val();
+            if ($serialno) {
+                $filter.push({ field: "serialno", operator: "contains", value: $serialno });
+            }
+
+			$sa106gkey = $("#txtsa106gkey").val();
+            if ($sa106gkey) {
+                $filter.push({ field: "sa106gkey", operator: "contains", value: $sa106gkey });
+            }
+
+			$ba101gkey = $("#txtba101gkey").val();
+            if ($ba101gkey) {
+                $filter.push({ field: "ba101gkey", operator: "contains", value: $ba101gkey });
+            }
+
+			$ba110gkey = $("#txtba110gkey").val();
+            if ($ba110gkey) {
+                $filter.push({ field: "ba110gkey", operator: "contains", value: $ba110gkey });
+            }
+
+			$ba113gkey = $("#txtba113gkey").val();
+            if ($ba113gkey) {
+                $filter.push({ field: "ba113gkey", operator: "contains", value: $ba113gkey });
+            }
+
+			$mr200gkey = $("#txtmr200gkey").val();
+            if ($mr200gkey) {
+                $filter.push({ field: "mr200gkey", operator: "contains", value: $mr200gkey });
+            }
+
+			$mr200agkey = $("#txtmr200agkey").val();
+            if ($mr200agkey) {
+                $filter.push({ field: "mr200agkey", operator: "contains", value: $mr200agkey });
+            }
+
+			$ba120gkey = $("#txtba120gkey").val();
+            if ($ba120gkey) {
+                $filter.push({ field: "ba120gkey", operator: "contains", value: $ba120gkey });
+            }
+
+			$ba121gkey = $("#txtba121gkey").val();
+            if ($ba121gkey) {
+                $filter.push({ field: "ba121gkey", operator: "contains", value: $ba121gkey });
+            }
+
+			$ba106gkey = $("#txtba106gkey").val();
+            if ($ba106gkey) {
+                $filter.push({ field: "ba106gkey", operator: "contains", value: $ba106gkey });
+            }
+
+			$shipmentdate = $("#txtshipmentdate").val();
+            if ($shipmentdate) {
+                $filter.push({ field: "shipmentdate", operator: "contains", value: $shipmentdate });
+            }
+
+			$canceldate = $("#txtcanceldate").val();
+            if ($canceldate) {
+                $filter.push({ field: "canceldate", operator: "contains", value: $canceldate });
+            }
+
+			$cancelreason = $("#txtcancelreason").val();
+            if ($cancelreason) {
+                $filter.push({ field: "cancelreason", operator: "contains", value: $cancelreason });
+            }
+
+			$activityid = $("#txtactivityid").val();
+            if ($activityid) {
+                $filter.push({ field: "activityid", operator: "contains", value: $activityid });
+            }
+
+			$activityname = $("#txtactivityname").val();
+            if ($activityname) {
+                $filter.push({ field: "activityname", operator: "contains", value: $activityname });
+            }
+
+			$quantity = $("#txtquantity").val();
+            if ($quantity) {
+                $filter.push({ field: "quantity", operator: "contains", value: $quantity });
+            }
+
+			$nodisprice = $("#txtnodisprice").val();
+            if ($nodisprice) {
+                $filter.push({ field: "nodisprice", operator: "contains", value: $nodisprice });
+            }
+
+			$noamount = $("#txtnoamount").val();
+            if ($noamount) {
+                $filter.push({ field: "noamount", operator: "contains", value: $noamount });
+            }
+
+			$disprice = $("#txtdisprice").val();
+            if ($disprice) {
+                $filter.push({ field: "disprice", operator: "contains", value: $disprice });
+            }
+
+			$cancelqty = $("#txtcancelqty").val();
+            if ($cancelqty) {
+                $filter.push({ field: "cancelqty", operator: "contains", value: $cancelqty });
+            }
+
+			$cancelamt = $("#txtcancelamt").val();
+            if ($cancelamt) {
+                $filter.push({ field: "cancelamt", operator: "contains", value: $cancelamt });
+            }
+
+			$outquantity = $("#txtoutquantity").val();
+            if ($outquantity) {
+                $filter.push({ field: "outquantity", operator: "contains", value: $outquantity });
+            }
+
+			$retquantity = $("#txtretquantity").val();
+            if ($retquantity) {
+                $filter.push({ field: "retquantity", operator: "contains", value: $retquantity });
+            }
+
+			$prepono = $("#txtprepono").val();
+            if ($prepono) {
+                $filter.push({ field: "prepono", operator: "contains", value: $prepono });
+            }
+
+			$mr210gkey = $("#txtmr210gkey").val();
+            if ($mr210gkey) {
+                $filter.push({ field: "mr210gkey", operator: "contains", value: $mr210gkey });
+            }
+
+			$mr210agkey = $("#txtmr210agkey").val();
+            if ($mr210agkey) {
+                $filter.push({ field: "mr210agkey", operator: "contains", value: $mr210agkey });
+            }
+
+			$remark = $("#txtremark").val();
+            if ($remark) {
+                $filter.push({ field: "remark", operator: "contains", value: $remark });
+            }
+
+			$replication_create = $("#txtreplication_create").val();
+            if ($replication_create) {
+                $filter.push({ field: "replication_create", operator: "contains", value: $replication_create });
+            }
+
+			$replication_update = $("#txtreplication_update").val();
+            if ($replication_update) {
+                $filter.push({ field: "replication_update", operator: "contains", value: $replication_update });
+            }
+
+			$inventoryQty = $("#txtinventoryQty").val();
+            if ($inventoryQty) {
+                $filter.push({ field: "inventoryQty", operator: "contains", value: $inventoryQty });
+            }
+
+			$outstockQty = $("#txtoutstockQty").val();
+            if ($outstockQty) {
+                $filter.push({ field: "outstockQty", operator: "contains", value: $outstockQty });
+            }
+
+			$tstdqty = $("#txttstdqty").val();
+            if ($tstdqty) {
+                $filter.push({ field: "tstdqty", operator: "contains", value: $tstdqty });
+            }
+
+			$ba126gkey = $("#txtba126gkey").val();
+            if ($ba126gkey) {
+                $filter.push({ field: "ba126gkey", operator: "contains", value: $ba126gkey });
+            }
+
+			$webgkey = $("#txtwebgkey").val();
+            if ($webgkey) {
+                $filter.push({ field: "webgkey", operator: "contains", value: $webgkey });
+            }
+
+			$canadaamt = $("#txtcanadaamt").val();
+            if ($canadaamt && $canadaamt != 0) {
+                $filter.push({ field: "canadaamt", operator: "eq", value: $canadaamt });
+            }
+
+			$ba117gkey = $("#txtba117gkey").val();
+            if ($ba117gkey) {
+                $filter.push({ field: "ba117gkey", operator: "contains", value: $ba117gkey });
+            }
+
+            var grid = $("#grid").data("kendoGrid");
+            grid.dataSource.filter($filter);
+        });
+
+        function DeleteItem(e) {
+            $("#deleteModal").modal('show');
+            $("#deleteModal #YesDeleteBtn").attr("href", $(e).attr("data-url"));
+            $("#deleteMessage").text("Are you sure you want to delete this sa106a - " + $(e).attr("data-sa106gkey") + " ?");
+        }
+    </script>
+}
+<style type="text/css">
+    span.k-link {
+        padding: 6px !important;
+    }
+	.k-header.k-grid-toolbar a {
+        padding: 2px;
+    }
+</style>
+
+<!-- Model Dialog for Delete record -->
+<div id="deleteModal" class="modal fade" role="dialog">
+    <div class="modal-dialog" style="vertical-align: middle;height: 100%;margin-top:250px">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header" style="background-color:whitesmoke;padding:9px 15px;">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Delete sa106a</h4>
+            </div>
+            <div class="modal-body">
+                <p id="deleteMessage"></p>
+            </div>
+            <div class="modal-footer" style="background-color:whitesmoke;padding:9px 15px;">
+                <a class="btn btn-primary" id="YesDeleteBtn">Yes</a>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">No</button>
+            </div>
+        </div>
+    </div>
+</div>

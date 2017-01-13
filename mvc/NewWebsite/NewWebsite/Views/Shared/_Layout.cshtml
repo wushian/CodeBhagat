@@ -1,0 +1,175 @@
+@using NewWebsite.Helper;
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>NewWebsite - ASP.NET MVC Application</title>
+	@Styles.Render("~/Content/css")
+	@Scripts.Render("~/bundles/modernizr")
+
+	<link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+	<link href="@Url.Content("~/Content/mvcNotify.css")" rel="stylesheet" type="text/css" />
+	<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+	<script src="@Url.Content("~/Scripts/mvcNotify.js")" type="text/javascript"></script>
+</head>
+<body style="overflow-x: hidden;">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+		@Html.ActionLink("NewWebsite", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="#menu-toggle" id="menu-toggle">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+		</div>
+		<div class="navbar-collapse collapse">
+			@Html.Partial("_LoginPartial")
+			<ul class="nav navbar-nav navbar-left" style="padding-left:100px;">
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-envelope"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Action</a></li>
+						<li><a href="#">Another action</a></li>
+						<li><a href="#">Something else here</a></li>
+						<li role="separator" class="divider"></li>
+						<li><a href="#">Separated link</a></li>
+					</ul>
+				</li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-bell"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Action</a></li>
+						<li><a href="#">Another action</a></li>
+						<li><a href="#">Something else here</a></li>
+						<li role="separator" class="divider"></li>
+						<li><a href="#">Separated link</a></li>
+					</ul>
+				</li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="glyphicon glyphicon-question-sign" ></i></a>
+					<ul class="dropdown-menu">
+						<li>@Html.ActionLink("About", "About", "Home")</li>
+						<li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+    </div>
+
+    <div id="wrapper">
+        <!-- Sidebar -->
+		@if (Request.IsAuthenticated)
+        {
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li>
+                    <a href="/"><i class="glyphicon glyphicon-home"></i> Dashboard </a>
+                </li>
+                <li>
+                    <a data-toggle="collapse" href="#tables" id="tbl"><i class="glyphicon glyphicon-list"></i> Tables <span class="glyphicon glyphicon-collapse-down"></span></a>
+                    <ul class="panel-collapse collapse" id="tables">
+                        <li>@Html.ActionLink("sa106", "Index", "sa106")</li>
+<li>@Html.ActionLink("sa106a", "Index", "sa106a")</li>
+<li>@Html.ActionLink("sa106b", "Index", "sa106b")</li>
+<li>@Html.ActionLink("sa106c", "Index", "sa106c")</li>
+<li>@Html.ActionLink("sa106d", "Index", "sa106d")</li>
+
+                    </ul>
+                </li>
+                <li>
+                    <a data-toggle="collapse" href="#views" id="vw"><i class="glyphicon glyphicon-list-alt"></i> Views <span class="glyphicon glyphicon-collapse-down"></span></a>
+                    <ul class="panel-collapse collapse" id="views">
+                        
+                    </ul>
+                </li>
+                @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                {
+                    <li>
+                        <a data-toggle="collapse" href="#adminMenu" id="admin"><i class="glyphicon glyphicon-user"></i> Admin <span class="glyphicon glyphicon-collapse-down"></span></a>
+                        <ul class="panel-collapse collapse" id="adminMenu">
+                            <li>@Html.ActionLink("Manage Users", "Index", "UsersAdmin")</li>
+                            <li>@Html.ActionLink("Manage Roles", "Index", "RolesAdmin")</li>
+                        </ul>
+                    </li>
+                }
+                <li><a href="/Help"><i class="glyphicon glyphicon-globe"></i> APIs</a></li>
+                <li>
+                    <a href="/Home/Inbox"><i class="glyphicon glyphicon-envelope"></i> Inbox <span class="badge">42</span></a>
+                </li>
+                <li>
+                    <a href="/Home/Graphs"><i class="glyphicon glyphicon-align-left"></i> Graphs </a>
+                </li>
+                <li>
+                    <a href="/Home/Calendar"><i class="glyphicon glyphicon-calendar"></i> Calendar </a>
+                </li>
+                <li>
+                    <a href="/Home/Settings"><i class="glyphicon glyphicon-cog"></i> Settings </a>
+                </li>
+                <li class="dropdown">
+                    <a data-toggle="collapse" href="#helpMenu" id="help"><i class="glyphicon glyphicon-question-sign"></i> Help <span class="glyphicon glyphicon-collapse-down"></span></a>
+                    <ul class="panel-collapse collapse" id="helpMenu">
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+		}
+		<!-- Page Content -->
+		<div id="page-content-wrapper" style="padding:5px;">
+			<div class="container-fluid">
+				<div class="row">
+					<div id="mvcNotify" style="display: none;top:50px;">
+						@Html.RenderMessages()
+					</div>
+					<div class="col-lg-12">
+						@RenderBody()
+						<footer>
+							<br />
+							<hr />
+							<p><span>&copy; @DateTime.Now.Year [COMPANY_NAME]. All rights reserved. | My NewWebsite MVC Web Application </span> <span>|</span></p>
+						</footer>
+					</div>
+				</div>
+			</div>
+		</div>
+        <!-- /#page-content-wrapper -->
+    </div>
+
+    <!-- /#wrapper -->
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+	
+    <script>
+        $(document).ready(function () {
+            $("#tables").on("hide.bs.collapse", function () {
+                $("#tbl").html('<i class="glyphicon glyphicon-list"></i> Tables <span class="glyphicon glyphicon-collapse-down"></span>');
+            });
+            $("#tables").on("show.bs.collapse", function () {
+                $("#tbl").html('<i class="glyphicon glyphicon-list"></i> Tables <span class="glyphicon glyphicon-collapse-up"></span>');
+            });
+            $("#views").on("hide.bs.collapse", function () {
+                $("#vw").html('<i class="glyphicon glyphicon-list-alt"></i> Views <span class="glyphicon glyphicon-collapse-down"></span>');
+            });
+            $("#views").on("show.bs.collapse", function () {
+            	$("#vw").html('<i class="glyphicon glyphicon-list-alt"></i> Views <span class="glyphicon glyphicon-collapse-up"></span>');
+            });
+        });
+    </script>
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    mvcNotify.autoClearTimeout = 1000;
+    </script>
+</body>
+</html>

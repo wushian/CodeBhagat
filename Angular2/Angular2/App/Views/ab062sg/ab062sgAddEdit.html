@@ -1,0 +1,45 @@
+<form id="ab062sgAddEdit" name="ab062sgAddEdit">
+	<div class="panel panel-primary" data-ng-controller="ab062sgAddEdit as vm">
+		<div class="panel-heading">{{vm.Title}}</div>
+		<div class="panel-body">
+			<div class="form-horizontal">
+				<div class="row has-error">
+					<span id="error" class="help-block"></span>
+				</div>
+				
+				<div class="form-group">
+					<label class="col-xs-3 col-sm-2 control-label">Gkey:</label>
+					<div class="col-xs-9 col-sm-10">
+						{{vm.ab062sg.gkey}}
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="ba060gkey" class="col-xs-3 col-sm-2 control-label">Ba060gkey:</label>
+					<div class="col-xs-9 col-sm-10">
+						<input type="text" class="form-control" id="ba060gkey" name="ba060gkey" ng-model="vm.ab062sg.ba060gkey" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="rate" class="col-xs-3 col-sm-2 control-label">Rate:</label>
+					<div class="col-xs-9 col-sm-10">
+						<input type="text" class="form-control" id="rate" name="rate" ng-model="vm.ab062sg.rate" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="ym" class="col-xs-3 col-sm-2 control-label">Ym:</label>
+					<div class="col-xs-9 col-sm-10">
+						<input type="text" class="form-control" id="ym" name="ym" ng-model="vm.ab062sg.ym" />
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="panel-footer clearfix">
+			<div class="pull-right ng-isolate-scope">
+				<button class="btn btn-primary" data-style="expand-right" type="button" ng-click="vm.save()">
+					<span class="glyphicon glyphicon-floppy-save"></span> Save
+				</button>
+				<a class="btn btn-primary" href="#/ab062sg"><span class="glyphicon glyphicon-arrow-left"></span> Cancel</a>
+			</div>
+		</div>
+	</div>
+</form>

@@ -1,0 +1,156 @@
+<div id="ab041List" style="overflow-x: hidden;" data-ng-controller="ab041List as vmab041">
+    <span class="lead">ab041 List</span>
+    <div class="panel panel-default" style="padding:0px;">
+        <div class="panel-heading cursor" ng-click="vmab041.hideShowSearchPanel()"><b>Search ab041</b><div class="pull-right "><i ng-class="vmab041.isSearch?'glyphicon glyphicon-resize-small':'glyphicon glyphicon-resize-full'"></i></div></div>
+        <div class="panel-body" ng-show="vmab041.isSearch">
+            <div class="container">
+                <div class="form-horizontal">
+
+				<div class="form-group">
+					<label class="col-xs-3 col-sm-2 control-label">Gkey:</label>
+					<div class="col-xs-9 col-sm-10">
+						<input type="text" class="form-control" id="gkey" name="gkey" ng-model="vmab041.ab041Search.gkey" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-xs-3 col-sm-2 control-label">Bbankno:</label>
+					<div class="col-xs-9 col-sm-10">
+						<input type="text" class="form-control" id="bbankno" name="bbankno" ng-model="vmab041.ab041Search.bbankno" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-xs-3 col-sm-2 control-label">Changedd:</label>
+					<div class="col-xs-9 col-sm-10">
+						<input type="text" class="form-control" id="changedd" name="changedd" ng-model="vmab041.ab041Search.changedd" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-xs-3 col-sm-2 control-label">Bbank Name:</label>
+					<div class="col-xs-9 col-sm-10">
+						<input type="text" class="form-control" id="bbankname" name="bbankname" ng-model="vmab041.ab041Search.bbankname" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-xs-3 col-sm-2 control-label">Ebbank Name:</label>
+					<div class="col-xs-9 col-sm-10">
+						<input type="text" class="form-control" id="ebbankname" name="ebbankname" ng-model="vmab041.ab041Search.ebbankname" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-xs-3 col-sm-2 control-label">Tel:</label>
+					<div class="col-xs-9 col-sm-10">
+						<input type="text" class="form-control" id="tel" name="tel" ng-model="vmab041.ab041Search.tel" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-xs-3 col-sm-2 control-label">Fax:</label>
+					<div class="col-xs-9 col-sm-10">
+						<input type="text" class="form-control" id="fax" name="fax" ng-model="vmab041.ab041Search.fax" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-xs-3 col-sm-2 control-label">Address:</label>
+					<div class="col-xs-9 col-sm-10">
+						<input type="text" class="form-control" id="address" name="address" ng-model="vmab041.ab041Search.address" />
+					</div>
+				</div>
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer clearfix" ng-show="vmab041.isSearch">
+            <div class="form-group">
+                <div class="col-xs-12 col-xs-12">
+                    <div class="row pull-right ng-isolate-scope">
+                        <button class="btn btn-primary" data-style="expand-right" type="button" ng-click="vmab041.getSearchab041()">
+                            <span class="glyphicon glyphicon-search"></span> Search
+                        </button>
+                        <button class="btn btn-primary" ng-click="vmab041.clearSearch()"><i class="fa fa-ban"></i> Clear</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
+    <div class="table-responsive" style="width: 100%;overflow: auto;">
+        <table class="table table-striped table-hover table-condensed table-bordered">
+            <caption>
+                <div class="row" style="padding:2px;margin:0px;border:1px solid lightgray;">
+                    <div class="col-md-4" style="padding-left:2px;">
+                        <div class="btn-toolbar" role="toolbar">
+                            <div class="btn-group">
+                                <a class="btn-sm" href="/#/ab041/Add" title="Add ab041"><i class="glyphicon glyphicon-plus"></i></a>
+                                <a class="btn-sm" ng-click="vmab041.multipleDeleteab041()" title="Delete List(s)"><i class="glyphicon glyphicon-remove"></i></a>
+                                <a class="btn-sm" ng-click="vmab041.getab041()" title="Refresh List"><i class="glyphicon glyphicon-refresh"></i></a>
+                                <a class="btn-sm" href="/#/ab041/ExportToExcel" title="Export to Excel"><i class="glyphicon glyphicon-list-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-grid-paging
+                         data-get-data="vmab041.getab041()"
+                         data-paging="vmab041.paging">
+                    </div>
+                </div>
+            </caption>
+            <thead>
+                <tr style="padding:2px;">
+                    <td>
+                        <input type="checkbox" ng-click="vmab041.selectUnselectAll($event)" class="css-checkbox lrg" id="selectAllNone" name="selectAllNone" />
+                        <label for="selectAllNone" name="selectAllNone" class="css-label lrg web-two-style"></label>
+                    </td>
+                    <td>Actions</td>
+					
+			      <td ng-click="vmab041.sorting($event)" data-colname="gkey" class="cursor sorting">Gkey</td>
+			      <td ng-click="vmab041.sorting($event)" data-colname="bbankno" class="cursor sorting">Bbankno</td>
+			      <td ng-click="vmab041.sorting($event)" data-colname="changedd" class="cursor sorting">Changedd</td>
+			      <td ng-click="vmab041.sorting($event)" data-colname="bbankname" class="cursor sorting">Bbank Name</td>
+			      <td ng-click="vmab041.sorting($event)" data-colname="ebbankname" class="cursor sorting">Ebbank Name</td>
+			      <td ng-click="vmab041.sorting($event)" data-colname="tel" class="cursor sorting">Tel</td>
+			      <td ng-click="vmab041.sorting($event)" data-colname="fax" class="cursor sorting">Fax</td>
+			      <td ng-click="vmab041.sorting($event)" data-colname="address" class="cursor sorting">Address</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-ng-repeat="b in vmab041.ab041List">
+                    <td style="width:20px">
+                        <input type="checkbox" class="css-checkbox lrg" id="{{b.gkey}}" />
+                        <label for="{{b.gkey}}" name="select{{b.gkey}}_lbl" class="css-label lrg web-two-style"></label>
+                    </td>
+                    <td style="width:80px">
+                        <div class="btn-toolbar" role="toolbar">
+                            <div class="btn-group">
+                                <a class="btn-sm" href="/#/ab041/Detail/{{b.gkey}}" style="padding:2px;"><i class="glyphicon glyphicon-search"></i></a>
+                                <a class="btn-sm" href="/#/ab041/Edit/{{b.gkey}}" style="padding:2px;"><i class="glyphicon glyphicon-edit"></i></a>
+                                <a class="btn-sm" ng-click="vmab041.deleteab041(b.gkey)" style="padding:2px;"><i class="glyphicon glyphicon-remove"></i></a>
+                            </div>
+                        </div>
+                    </td>
+					
+			      <td class="text-left">{{b.gkey}}</td>
+			      <td class="text-left">{{b.bbankno}}</td>
+			      <td class="text-left">{{b.changedd}}</td>
+			      <td class="text-left">{{b.bbankname}}</td>
+			      <td class="text-left">{{b.ebbankname}}</td>
+			      <td class="text-left">{{b.tel}}</td>
+			      <td class="text-left">{{b.fax}}</td>
+			      <td class="text-left">{{b.address}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="modal fade" id="commonModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="modalTitle"></h4>
+                </div>
+                <div class="modal-body" id="modalBody">
+                    ...............
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" ng-show="vmab041.isDeleteBtn" class="btn btn-primary" ng-click="vmab041.confirmDelete()">Ok</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,187 @@
+@model NewWebsite.Models.sa106aData
+
+@{
+    ViewBag.Title = "Create sa106a";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Create Sa106a</h3>
+    @using (Html.BeginForm()) {
+		{
+        <fieldset>
+            <div class="row">
+                    &nbsp;
+            </div>
+            <div class="panel panel-default">
+				<div class="panel-heading"><b>Add Sa106a</b></div>
+                <div class="panel-body">
+					<table>
+					
+			<tr>
+                <td><label for="gkey">Gkey:</label></td>
+				<td>@Html.TextBox("gkey", Model.gkey, new { @id="lblgkey", @class = "form-control", @readonly = "readonly"}) </td>
+            </tr>
+			<tr>
+                <td><label for="serialno">Serialno:</label></td>
+				<td>@Html.TextBox("serialno", Model.serialno, new { @id="txtserialno", @class = "form-control"}) @Html.ValidationMessage("serialno", "", new { @class = "text-danger" }) </td>
+            </tr>
+			<tr>
+                <td><label for="sa106gkey">Sa106gkey:</label></td>
+				<td>@Html.TextBox("sa106gkey", Model.sa106gkey, new { @id="txtsa106gkey", @class = "form-control"}) @Html.ValidationMessage("sa106gkey", "", new { @class = "text-danger" }) </td>
+            </tr>
+			<tr>
+                <td><label for="ba101gkey">Ba101gkey:</label></td>
+				<td>@Html.TextBox("ba101gkey", Model.ba101gkey, new { @id="txtba101gkey", @class = "form-control"}) @Html.ValidationMessage("ba101gkey", "", new { @class = "text-danger" }) </td>
+            </tr>
+			<tr>
+                <td><label for="ba110gkey">Ba110gkey:</label></td>
+				<td>@Html.TextBox("ba110gkey", Model.ba110gkey, new { @id="txtba110gkey", @class = "form-control"}) @Html.ValidationMessage("ba110gkey", "", new { @class = "text-danger" }) </td>
+            </tr>
+			<tr>
+                <td><label for="ba113gkey">Ba113gkey:</label></td>
+				<td>@Html.TextBox("ba113gkey", Model.ba113gkey, new { @id="txtba113gkey", @class = "form-control"}) @Html.ValidationMessage("ba113gkey", "", new { @class = "text-danger" }) </td>
+            </tr>
+			<tr>
+                <td><label for="mr200gkey">Mr200gkey:</label></td>
+				<td>@Html.TextBox("mr200gkey", Model.mr200gkey, new { @id="txtmr200gkey", @class = "form-control"}) @Html.ValidationMessage("mr200gkey", "", new { @class = "text-danger" }) </td>
+            </tr>
+			<tr>
+                <td><label for="mr200agkey">Mr200agkey:</label></td>
+				<td>@Html.TextBox("mr200agkey", Model.mr200agkey, new { @id="txtmr200agkey", @class = "form-control"}) @Html.ValidationMessage("mr200agkey", "", new { @class = "text-danger" }) </td>
+            </tr>
+			<tr>
+                <td><label for="ba120gkey">Ba120gkey:</label></td>
+				<td>@Html.TextBox("ba120gkey", Model.ba120gkey, new { @id="txtba120gkey", @class = "form-control"}) @Html.ValidationMessage("ba120gkey", "", new { @class = "text-danger" }) </td>
+            </tr>
+			<tr>
+                <td><label for="ba121gkey">Ba121gkey:</label></td>
+				<td>@Html.TextBox("ba121gkey", Model.ba121gkey, new { @id="txtba121gkey", @class = "form-control"}) @Html.ValidationMessage("ba121gkey", "", new { @class = "text-danger" }) </td>
+            </tr>
+			<tr>
+                <td><label for="ba106gkey">Ba106gkey:</label></td>
+				<td>@Html.TextBox("ba106gkey", Model.ba106gkey, new { @id="txtba106gkey", @class = "form-control"}) @Html.ValidationMessage("ba106gkey", "", new { @class = "text-danger" }) </td>
+            </tr>
+			<tr>
+                <td><label for="shipmentdate">Shipment Date:</label></td>
+				<td>@Html.TextBox("shipmentdate", Model.shipmentdate, new { @id="txtshipmentdate", @class = "form-control"}) @Html.ValidationMessage("shipmentdate", "", new { @class = "text-danger" }) </td>
+            </tr>
+			<tr>
+                <td><label for="canceldate">Cancel Date:</label></td>
+				<td>@Html.TextBox("canceldate", Model.canceldate, new { @id="txtcanceldate", @class = "form-control"}) @Html.ValidationMessage("canceldate", "", new { @class = "text-danger" }) </td>
+            </tr>
+			<tr>
+                <td><label for="cancelreason">Cancelreason:</label></td>
+				<td>@Html.TextArea("cancelreason", Model.cancelreason.ToString(), new { @id="txtcancelreason", @class = "form-control", @rows=5, @cols=40})@Html.ValidationMessage("cancelreason", "", new { @class = "text-danger" }) </td>
+            </tr>
+			<tr>
+                <td><label for="activityid">Activity Id:</label></td>
+				<td>@Html.TextArea("activityid", Model.activityid.ToString(), new { @id="txtactivityid", @class = "form-control", @rows=5, @cols=40})@Html.ValidationMessage("activityid", "", new { @class = "text-danger" }) </td>
+            </tr>
+			<tr>
+                <td><label for="activityname">Activity Name:</label></td>
+				<td>@Html.TextArea("activityname", Model.activityname.ToString(), new { @id="txtactivityname", @class = "form-control", @rows=5, @cols=40})@Html.ValidationMessage("activityname", "", new { @class = "text-danger" }) </td>
+            </tr>
+			<tr>
+                <td><label for="quantity">Quantity:</label></td>
+				<td>@Html.TextBox("quantity", Model.quantity, new { @id="txtquantity", @class = "form-control"}) @Html.ValidationMessage("quantity", "", new { @class = "text-danger" }) </td>
+            </tr>
+			<tr>
+                <td><label for="nodisprice">Nodisprice:</label></td>
+				<td>@Html.TextBox("nodisprice", Model.nodisprice, new { @id="txtnodisprice", @class = "form-control"}) @Html.ValidationMessage("nodisprice", "", new { @class = "text-danger" }) </td>
+            </tr>
+			<tr>
+                <td><label for="noamount">Noamount:</label></td>
+				<td>@Html.TextBox("noamount", Model.noamount, new { @id="txtnoamount", @class = "form-control"}) @Html.ValidationMessage("noamount", "", new { @class = "text-danger" }) </td>
+            </tr>
+			<tr>
+                <td><label for="disprice">Disprice:</label></td>
+				<td>@Html.TextBox("disprice", Model.disprice, new { @id="txtdisprice", @class = "form-control"}) @Html.ValidationMessage("disprice", "", new { @class = "text-danger" }) </td>
+            </tr>
+			<tr>
+                <td><label for="cancelqty">Cancelqty:</label></td>
+				<td>@Html.TextBox("cancelqty", Model.cancelqty, new { @id="txtcancelqty", @class = "form-control"}) @Html.ValidationMessage("cancelqty", "", new { @class = "text-danger" }) </td>
+            </tr>
+			<tr>
+                <td><label for="cancelamt">Cancelamt:</label></td>
+				<td>@Html.TextBox("cancelamt", Model.cancelamt, new { @id="txtcancelamt", @class = "form-control"}) @Html.ValidationMessage("cancelamt", "", new { @class = "text-danger" }) </td>
+            </tr>
+			<tr>
+                <td><label for="outquantity">Outquantity:</label></td>
+				<td>@Html.TextBox("outquantity", Model.outquantity, new { @id="txtoutquantity", @class = "form-control"}) @Html.ValidationMessage("outquantity", "", new { @class = "text-danger" }) </td>
+            </tr>
+			<tr>
+                <td><label for="retquantity">Retquantity:</label></td>
+				<td>@Html.TextBox("retquantity", Model.retquantity, new { @id="txtretquantity", @class = "form-control"}) @Html.ValidationMessage("retquantity", "", new { @class = "text-danger" }) </td>
+            </tr>
+			<tr>
+                <td><label for="prepono">Prepono:</label></td>
+				<td>@Html.TextBox("prepono", Model.prepono, new { @id="txtprepono", @class = "form-control"}) @Html.ValidationMessage("prepono", "", new { @class = "text-danger" }) </td>
+            </tr>
+			<tr>
+                <td><label for="mr210gkey">Mr210gkey:</label></td>
+				<td>@Html.TextBox("mr210gkey", Model.mr210gkey, new { @id="txtmr210gkey", @class = "form-control"}) @Html.ValidationMessage("mr210gkey", "", new { @class = "text-danger" }) </td>
+            </tr>
+			<tr>
+                <td><label for="mr210agkey">Mr210agkey:</label></td>
+				<td>@Html.TextBox("mr210agkey", Model.mr210agkey, new { @id="txtmr210agkey", @class = "form-control"}) @Html.ValidationMessage("mr210agkey", "", new { @class = "text-danger" }) </td>
+            </tr>
+			<tr>
+                <td><label for="remark">Remark:</label></td>
+				<td>@Html.TextArea("remark", Model.remark.ToString(), new { @id="txtremark", @class = "form-control", @rows=5, @cols=40})@Html.ValidationMessage("remark", "", new { @class = "text-danger" }) </td>
+            </tr>
+			<tr>
+                <td><label for="replication_create">Replication Create:</label></td>
+				<td>@Html.TextBox("replication_create", Model.replication_create, new { @id="txtreplication_create", @class = "form-control"}) @Html.ValidationMessage("replication_create", "", new { @class = "text-danger" }) </td>
+            </tr>
+			<tr>
+                <td><label for="replication_update">Replication Up Date:</label></td>
+				<td>@Html.TextBox("replication_update", Model.replication_update, new { @id="txtreplication_update", @class = "form-control"}) @Html.ValidationMessage("replication_update", "", new { @class = "text-danger" }) </td>
+            </tr>
+			<tr>
+                <td><label for="inventoryQty">Inventoryqty:</label></td>
+				<td>@Html.TextBox("inventoryQty", Model.inventoryQty, new { @id="txtinventoryQty", @class = "form-control"}) @Html.ValidationMessage("inventoryQty", "", new { @class = "text-danger" }) </td>
+            </tr>
+			<tr>
+                <td><label for="outstockQty">Outstockqty:</label></td>
+				<td>@Html.TextBox("outstockQty", Model.outstockQty, new { @id="txtoutstockQty", @class = "form-control"}) @Html.ValidationMessage("outstockQty", "", new { @class = "text-danger" }) </td>
+            </tr>
+			<tr>
+                <td><label for="tstdqty">Tstdqty:</label></td>
+				<td>@Html.TextBox("tstdqty", Model.tstdqty, new { @id="txttstdqty", @class = "form-control"}) @Html.ValidationMessage("tstdqty", "", new { @class = "text-danger" }) </td>
+            </tr>
+			<tr>
+                <td><label for="ba126gkey">Ba126gkey:</label></td>
+				<td>@Html.TextBox("ba126gkey", Model.ba126gkey, new { @id="txtba126gkey", @class = "form-control"}) @Html.ValidationMessage("ba126gkey", "", new { @class = "text-danger" }) </td>
+            </tr>
+			<tr>
+                <td><label for="webgkey">Webgkey:</label></td>
+				<td>@Html.TextBox("webgkey", Model.webgkey, new { @id="txtwebgkey", @class = "form-control"}) @Html.ValidationMessage("webgkey", "", new { @class = "text-danger" }) </td>
+            </tr>
+			<tr>
+                <td><label for="canadaamt">Canadaamt:</label></td>
+				<td>
+						<div class="input-group">
+							<div class="input-group-addon">$</div>
+							@Html.TextBox("canadaamt", Model.canadaamt, new { @id="txtcanadaamt", @class = "form-control text-right", @style="width:150px;" }) 
+						</div>
+					@Html.ValidationMessage("canadaamt", "", new { @class = "text-danger" }) </td>
+            </tr>
+			<tr>
+                <td><label for="ba117gkey">Ba117gkey:</label></td>
+				<td>@Html.TextBox("ba117gkey", Model.ba117gkey, new { @id="txtba117gkey", @class = "form-control"}) @Html.ValidationMessage("ba117gkey", "", new { @class = "text-danger" }) </td>
+            </tr>
+					</table>
+				</div>
+		        <div class="panel-footer">
+					<div class="row">
+						<div class="pull-right">
+							<button type="submit" value="Create" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-disk"></span> Save</button>
+							&nbsp;
+							<a href="@Url.Action("Index", "sa106a")" class="btn btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Back to List</a>
+						</div>
+					</div>
+				</div>
+			</div>
+        </fieldset>
+		}
+    }

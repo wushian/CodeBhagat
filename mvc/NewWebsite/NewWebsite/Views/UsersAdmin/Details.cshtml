@@ -1,0 +1,92 @@
+@model NewWebsite.Models.ApplicationUser
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>User Account Details</h2>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        User Account Details
+    </div>
+    <div class="panel-body">
+        <div>
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.UserName)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.UserName)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Email)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.FirstName)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.FirstName)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.LastName)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.LastName)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Address)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Address)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.State)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.State)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.PostalCode)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.PostalCode)
+                </dd>
+            </dl>
+        </div>
+        <h4>List of roles for this user</h4>
+        @if (ViewBag.RoleNames.Count == 0)
+        {
+            <hr />
+            <p>No roles found for this user.</p>
+        }
+
+        <table class="table">
+
+            @foreach (var item in ViewBag.RoleNames)
+            {
+                <tr>
+                    <td>
+                        @item
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+    <div class="panel-footer clearfix">
+        <div class="pull-right">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <div class="form-actions no-color">
+                    <a href="@Url.Action("Edit", new {@id = Model.Id})" value="Edit User" class="btn btn-primary"><span class="glyphicon glyphicon-edit"></span> Edit</a>
+                    &nbsp;
+                    @Html.ActionLink("Back to List", "Index", null, new {@class = "btn btn-primary"})
+                </div>
+            }
+        </div>
+    </div>
+</div>

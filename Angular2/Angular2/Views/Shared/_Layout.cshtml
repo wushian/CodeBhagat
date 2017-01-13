@@ -1,0 +1,266 @@
+@using Angular2.Helper;
+<!DOCTYPE html>
+<html data-ng-app="app">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>@ViewBag.Title - My Angular2 Application</title>
+	@Styles.Render("~/Content/css")
+	@Scripts.Render("~/bundles/modernizr")
+
+	<link href="~/content/select2/select2.css" rel="stylesheet" />
+	<link href="~/content/select2/select2-bootstrap.css" rel="stylesheet" />
+	<link href="~/Content/Custom.css" rel="stylesheet" />
+	<link href="~/Content/sidebar.css" rel="stylesheet" />
+	<link href="~/Content/loading-bar.css" rel="stylesheet" />
+	<link href="~/Content/social-buttons.css" rel="stylesheet" />
+	<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+	<link href="~/Content/NgToast/ngToast.min.css" rel="stylesheet" />
+	<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <style type="text/css">
+        /* Overwriting Bootstrap classes*/
+        .panel-heading {
+            padding: 5px;
+        }
+        .panel-footer {
+            padding: 5px;
+        }
+        .panel-body{
+            padding:4px;
+        }
+        .form-group {
+            margin-bottom: 4px;
+        }
+    </style>
+</head>
+<body style="overflow-x: hidden;">
+	<toast></toast>
+    @*<div ng-include="'/App/views/layout/header.html'"></div>*@
+	
+    <div class="navbar navbar-inverse navbar-fixed-top" ng-controller="indexController">
+        <a class="navbar-brand" href="/#/" title="Angular2 - AngularJS SPA Web Application">Angular2</a>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="#menu-toggle" id="menu-toggle">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-left" style="padding-left:100px;" data-ng-hide="!authentication.isAuth">
+                <li class="dropdown">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-envelope"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- If Not Authenticated, show below -->
+            <ul class="nav navbar-nav navbar-right" data-ng-show="!authentication.isAuth">
+                <li><a id="registerLink" href="/#/register">Register</a> </li>
+                <li><a id="loginLink" href="/#/login">Login</a> </li>
+            </ul>
+            <!-- If Authenticated, show below -->
+            <ul class="nav navbar-nav navbar-right" data-ng-hide="!authentication.isAuth">
+                <li class="dropdown">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Hello {{authentication.userName}} ! <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a id="editProfile" href="/#/Account/Profile"><i class="glyphicon glyphicon-user"></i> My Profile</a></li>
+                        <li><a id="changePassword" href="/#/Account/ChangePassword"><i class="glyphicon glyphicon-lock"></i> Change Password</a> </li>
+                        <li class="divider"></li>
+                        <li><a href="/#/" ng-click="logOut()"><i class="glyphicon glyphicon-log-out"></i> Log off</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right" data-ng-hide="!authentication.isAuth">
+                <li class="dropdown">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-bell"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right" data-ng-hide="!authentication.isAuth">
+                <li class="dropdown">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="glyphicon glyphicon-question-sign"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/#/About">About</a></li>
+                        <li><a href="/#/Contact">Contact</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="wrapper">
+        <!-- Sidebar -->
+		<div id="sidebar-wrapper" ng-controller="indexController" data-ng-hide="!authentication.isAuth">
+            <ul class="sidebar-nav">
+                <li>
+                    <a href="/#/"><i class="glyphicon glyphicon-home"></i> Dashboard </a>
+                </li>
+                <li data-ng-hide="!authentication.isAuth">
+					<a data-toggle="collapse" data-target="#tables" href="" id="tbl"><i class="glyphicon glyphicon-list"></i> Tables <span class="glyphicon glyphicon-collapse-down"></span></a>
+					<ul class="panel-collapse collapse" id="tables">
+<li><a href="/#/ab041"> ab041</a></li>
+<li><a href="/#/ab062sg"> ab062sg</a></li>
+<li><a href="/#/ab110"> ab110</a></li>
+<li><a href="/#/ab120"> ab120</a></li>
+<li><a href="/#/ab121sg"> ab121sg</a></li>
+
+					</ul>
+				</li>
+				<li data-ng-hide="!authentication.isAuth">
+					<a data-toggle="collapse" data-target="#views" href="" id="vw"><i class="glyphicon glyphicon-list"></i> Views <span class="glyphicon glyphicon-collapse-down"></span></a>
+					<ul class="panel-collapse collapse" id="views">
+
+					</ul>
+				</li>
+				<li data-ng-hide="!authentication.isAuth" class="dropdown">
+					<a data-toggle="collapse" data-target="#adminMenu" href="" id="admin"><i class="glyphicon glyphicon-user"></i> Admin <span class="glyphicon glyphicon-collapse-down"></span></a>
+					<ul class="panel-collapse collapse" id="adminMenu">
+						<li><a href="/#/UserAdmin">Manage Users</a></li>
+						<li><a href="/#/RolesAdmin">Manage Roles</a></li>
+					</ul>
+				</li>
+                <li><a href="/Help"><i class="glyphicon glyphicon-globe"></i> Web API Help Page</a></li>
+                <li>
+                    <a href="/#/Inbox"><i class="glyphicon glyphicon-envelope"></i> Inbox <span class="badge">42</span></a>
+                </li>
+                <li>
+                    <a href="/#/Graphs"><i class="glyphicon glyphicon-align-left"></i> Graphs </a>
+                </li>
+                <li>
+                    <a href="/#/Calendar"><i class="glyphicon glyphicon-calendar"></i> Calendar </a>
+                </li>
+                <li>
+                    <a href="/#/Settings"><i class="glyphicon glyphicon-cog"></i> Settings </a>
+                </li>
+                <li class="dropdown">
+                    <a data-toggle="collapse" data-target="#helpMenu" href="" id="help"><i class="glyphicon glyphicon-question-sign"></i> Help <span class="glyphicon glyphicon-collapse-down"></span></a>
+                    <ul class="panel-collapse collapse" id="helpMenu">
+                        <li><a href="/#/About">About</a></li>
+                        <li><a href="/#/Contact">Contact</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+		<!-- Page Content Area Start -->
+		<div id="page-content-wrapper" style="padding:5px;">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-lg-12">
+						@RenderBody()
+					</div>
+				</div>
+			</div>
+		</div>
+        <!-- Page Content Area End -->
+    </div>
+
+	<!-- Sticky Footer at the bottom - To change height of footer, change body.padding-bottom: 50px; in /Contents/Site.css file -->
+    <footer class="navbar navbar-fixed-bottom" style="background-color:whitesmoke">
+        <p><span>&copy; @DateTime.Now.Year [COMPANY_NAME]. All rights reserved. | My NorthwindNg AngularJS SPA Web Application </span> <span>|</span></p>
+    </footer>
+
+    <!-- /#wrapper -->
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+
+	<!-- Load Angular JS and Framework scripts -->
+	<script src="~/Scripts/angular-resource.js"></script>
+	<script src="~/Scripts/angular-sanitize.js"></script>
+	<script src="~/Scripts/select2.js"></script>
+	<script src="~/Scripts/ui-select2.js"></script>
+	<script src="~/Scripts/loading-bar.min.js"></script>
+	<script src="~/Scripts/NgToast/ngToast.js"></script>
+	<script src="~/Scripts/loader.js"></script>
+	
+	<!-- Load Application Framework scripts -->
+	<script src="~/App/app.js"></script>
+	<script src="~/App/config.route.js"></script>
+	<script src="~/App/filters/Filter.js"></script>
+	<script src="~/App/Views/layout/header.js"></script>
+	<script src="~/App/Common/services/dataContext.js"></script>
+	<script src="~/App/Common/services/common.js"></script>
+	<script src="~/App/Common/services/notify.js"></script>
+	<script src="~/App/Common/directives/gridPaging.js"></script>
+	<script src="~/App/common/directives/repateDone.js"></script>
+
+	<!-- Load application scripts -->
+<script src="~/App/Controllers/ab041/ab041List.js"></script>
+<script src="~/App/Controllers/ab041/ab041AddEdit.js"></script>
+<script src="~/App/Controllers/ab041/ab041Detail.js"></script>
+<script src="~/App/Controllers/ab062sg/ab062sgList.js"></script>
+<script src="~/App/Controllers/ab062sg/ab062sgAddEdit.js"></script>
+<script src="~/App/Controllers/ab062sg/ab062sgDetail.js"></script>
+<script src="~/App/Controllers/ab110/ab110List.js"></script>
+<script src="~/App/Controllers/ab110/ab110AddEdit.js"></script>
+<script src="~/App/Controllers/ab110/ab110Detail.js"></script>
+<script src="~/App/Controllers/ab120/ab120List.js"></script>
+<script src="~/App/Controllers/ab120/ab120AddEdit.js"></script>
+<script src="~/App/Controllers/ab120/ab120Detail.js"></script>
+<script src="~/App/Controllers/ab121sg/ab121sgList.js"></script>
+<script src="~/App/Controllers/ab121sg/ab121sgAddEdit.js"></script>
+<script src="~/App/Controllers/ab121sg/ab121sgDetail.js"></script>
+
+
+	<!-- Load controllers -->
+	<script src="~/App/Controllers/Account/loginController.js"></script>
+	<script src="~/App/Controllers/Account/signupController.js"></script>
+	<script src="~/App/Controllers/Account/indexController.js"></script>
+	<script src="~/App/Controllers/Account/forgotPasswordController.js"></script>
+	<script src="~/App/Controllers/Account/changePasswordController.js"></script>
+	<script src="~/App/Controllers/Account/ProfileController.js"></script>
+	<!-- Load services -->
+<script src="~/App/services/angular-local-storage.min.js"></script>
+	<script src="~/App/services/authInterceptorService.js"></script>
+	<script src="~/App/services/authService.js"></script>
+
+	<!-- Load Admin Scripts -->
+	<script src="~/App/Controllers/RolesAdmin/List.js"></script>
+	<script src="~/App/Controllers/UsersAdmin/List.js"></script>
+	<script src="~/App/Controllers/UsersAdmin/UserAddEdit.js"></script>
+	<script src="~/App/Controllers/UsersAdmin/UserDetail.js"></script>
+	<!-- Modal -->
+
+<!-- /#wrapper -->
+    <script>
+        $(document).ready(function () {
+            $("#tbl").on("hide.bs.collapse", function () {
+                $("#tbl").html('<i class="glyphicon glyphicon-list"></i> Tables <span class="glyphicon glyphicon-collapse-down"></span>');
+            });
+            $("#tbl").on("show.bs.collapse", function () {
+                $("#tbl").html('<i class="glyphicon glyphicon-list"></i> Tables <span class="glyphicon glyphicon-collapse-up"></span>');
+            });
+            $("#vw").on("hide.bs.collapse", function () {
+                $("#vw").html('<i class="glyphicon glyphicon-list-alt"></i> Views <span class="glyphicon glyphicon-collapse-down"></span>');
+            });
+            $("#vw").on("show.bs.collapse", function () {
+            	$("#vw").html('<i class="glyphicon glyphicon-list-alt"></i> Views <span class="glyphicon glyphicon-collapse-up"></span>');
+            });
+        });
+    </script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+
+    //  mvcNotify.autoClearTimeout = 1000;
+    </script>
+

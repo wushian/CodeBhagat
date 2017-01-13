@@ -1,0 +1,116 @@
+<div id="ab121sgList" style="overflow-x: hidden;" data-ng-controller="ab121sgList as vmab121sg">
+    <span class="lead">ab121sg List</span>
+    <div class="panel panel-default" style="padding:0px;">
+        <div class="panel-heading cursor" ng-click="vmab121sg.hideShowSearchPanel()"><b>Search ab121sg</b><div class="pull-right "><i ng-class="vmab121sg.isSearch?'glyphicon glyphicon-resize-small':'glyphicon glyphicon-resize-full'"></i></div></div>
+        <div class="panel-body" ng-show="vmab121sg.isSearch">
+            <div class="container">
+                <div class="form-horizontal">
+
+				<div class="form-group">
+					<label class="col-xs-3 col-sm-2 control-label">Gkey:</label>
+					<div class="col-xs-9 col-sm-10">
+						<input type="text" class="form-control" id="gkey" name="gkey" ng-model="vmab121sg.ab121sgSearch.gkey" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-xs-3 col-sm-2 control-label">Ba015gkey:</label>
+					<div class="col-xs-9 col-sm-10">
+						<input type="text" class="form-control" id="ba015gkey" name="ba015gkey" ng-model="vmab121sg.ab121sgSearch.ba015gkey" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-xs-3 col-sm-2 control-label">Ba005gkey:</label>
+					<div class="col-xs-9 col-sm-10">
+						<input type="text" class="form-control" id="ba005gkey" name="ba005gkey" ng-model="vmab121sg.ab121sgSearch.ba005gkey" />
+					</div>
+				</div>
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer clearfix" ng-show="vmab121sg.isSearch">
+            <div class="form-group">
+                <div class="col-xs-12 col-xs-12">
+                    <div class="row pull-right ng-isolate-scope">
+                        <button class="btn btn-primary" data-style="expand-right" type="button" ng-click="vmab121sg.getSearchab121sg()">
+                            <span class="glyphicon glyphicon-search"></span> Search
+                        </button>
+                        <button class="btn btn-primary" ng-click="vmab121sg.clearSearch()"><i class="fa fa-ban"></i> Clear</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
+    <div class="table-responsive" style="width: 100%;overflow: auto;">
+        <table class="table table-striped table-hover table-condensed table-bordered">
+            <caption>
+                <div class="row" style="padding:2px;margin:0px;border:1px solid lightgray;">
+                    <div class="col-md-4" style="padding-left:2px;">
+                        <div class="btn-toolbar" role="toolbar">
+                            <div class="btn-group">
+                                <a class="btn-sm" href="/#/ab121sg/Add" title="Add ab121sg"><i class="glyphicon glyphicon-plus"></i></a>
+                                <a class="btn-sm" ng-click="vmab121sg.multipleDeleteab121sg()" title="Delete List(s)"><i class="glyphicon glyphicon-remove"></i></a>
+                                <a class="btn-sm" ng-click="vmab121sg.getab121sg()" title="Refresh List"><i class="glyphicon glyphicon-refresh"></i></a>
+                                <a class="btn-sm" href="/#/ab121sg/ExportToExcel" title="Export to Excel"><i class="glyphicon glyphicon-list-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-grid-paging
+                         data-get-data="vmab121sg.getab121sg()"
+                         data-paging="vmab121sg.paging">
+                    </div>
+                </div>
+            </caption>
+            <thead>
+                <tr style="padding:2px;">
+                    <td>
+                        <input type="checkbox" ng-click="vmab121sg.selectUnselectAll($event)" class="css-checkbox lrg" id="selectAllNone" name="selectAllNone" />
+                        <label for="selectAllNone" name="selectAllNone" class="css-label lrg web-two-style"></label>
+                    </td>
+                    <td>Actions</td>
+					
+			      <td ng-click="vmab121sg.sorting($event)" data-colname="gkey" class="cursor sorting">Gkey</td>
+			      <td ng-click="vmab121sg.sorting($event)" data-colname="ba015gkey" class="cursor sorting">Ba015gkey</td>
+			      <td ng-click="vmab121sg.sorting($event)" data-colname="ba005gkey" class="cursor sorting">Ba005gkey</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-ng-repeat="b in vmab121sg.ab121sgList">
+                    <td style="width:20px">
+                        <input type="checkbox" class="css-checkbox lrg" id="{{b.gkey}}" />
+                        <label for="{{b.gkey}}" name="select{{b.gkey}}_lbl" class="css-label lrg web-two-style"></label>
+                    </td>
+                    <td style="width:80px">
+                        <div class="btn-toolbar" role="toolbar">
+                            <div class="btn-group">
+                                <a class="btn-sm" href="/#/ab121sg/Detail/{{b.gkey}}" style="padding:2px;"><i class="glyphicon glyphicon-search"></i></a>
+                                <a class="btn-sm" href="/#/ab121sg/Edit/{{b.gkey}}" style="padding:2px;"><i class="glyphicon glyphicon-edit"></i></a>
+                                <a class="btn-sm" ng-click="vmab121sg.deleteab121sg(b.gkey)" style="padding:2px;"><i class="glyphicon glyphicon-remove"></i></a>
+                            </div>
+                        </div>
+                    </td>
+					
+			      <td class="text-left">{{b.gkey}}</td>
+			      <td class="text-left">{{b.ba015gkey}}</td>
+			      <td class="text-left">{{b.ba005gkey}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="modal fade" id="commonModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="modalTitle"></h4>
+                </div>
+                <div class="modal-body" id="modalBody">
+                    ...............
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" ng-show="vmab121sg.isDeleteBtn" class="btn btn-primary" ng-click="vmab121sg.confirmDelete()">Ok</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

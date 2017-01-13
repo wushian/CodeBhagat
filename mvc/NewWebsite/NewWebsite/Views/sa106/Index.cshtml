@@ -1,0 +1,993 @@
+@model NewWebsite.Models.sa106Data
+@{
+    ViewBag.Title = "Sa106 List";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h3>Sa106 List</h3>
+
+<!-- Search Panel -->
+<div class="panel panel-default">
+    <div class="panel-heading">
+		<a data-toggle="collapse" href="#collapse1"><b>Search Sa106:</b></a>
+	</div>
+	<div id="collapse1" class="panel-collapse collapse">
+		<div class="panel-body">
+			<table>
+
+			<tr>
+                <td><label for="gkey">Gkey:</label></td>
+				<td>@Html.TextBox("gkey", Model.gkey, new { @id="txtgkey", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="orddate">Ord Date:</label></td>
+				<td>@Html.TextBox("orddate", Model.orddate, new { @id="txtorddate", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="mr200gkey">Mr200gkey:</label></td>
+				<td>@Html.TextBox("mr200gkey", Model.mr200gkey, new { @id="txtmr200gkey", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="issuedate">Issue Date:</label></td>
+				<td>@Html.TextBox("issuedate", Model.issuedate, new { @id="txtissuedate", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="pono">Pono:</label></td>
+				<td>@Html.TextBox("pono", Model.pono, new { @id="txtpono", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="salesno">Salesno:</label></td>
+				<td>@Html.TextBox("salesno", Model.salesno, new { @id="txtsalesno", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="returnno">Returnno:</label></td>
+				<td>@Html.TextBox("returnno", Model.returnno, new { @id="txtreturnno", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="returndate">Return Date:</label></td>
+				<td>@Html.TextBox("returndate", Model.returndate, new { @id="txtreturndate", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="deliveryno">Deliveryno:</label></td>
+				<td>@Html.TextBox("deliveryno", Model.deliveryno, new { @id="txtdeliveryno", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="rettype">Ret Type:</label></td>
+				<td>@Html.TextBox("rettype", Model.rettype, new { @id="txtrettype", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="xtype">X Type:</label></td>
+				<td>@Html.TextBox("xtype", Model.xtype, new { @id="txtxtype", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="ba205gkey">Ba205gkey:</label></td>
+				<td>@Html.TextBox("ba205gkey", Model.ba205gkey, new { @id="txtba205gkey", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="pickupdate">Pickup Date:</label></td>
+				<td>@Html.TextBox("pickupdate", Model.pickupdate, new { @id="txtpickupdate", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="canceldate">Cancel Date:</label></td>
+				<td>@Html.TextBox("canceldate", Model.canceldate, new { @id="txtcanceldate", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="ba100gkey">Ba100gkey:</label></td>
+				<td>@Html.TextBox("ba100gkey", Model.ba100gkey, new { @id="txtba100gkey", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="ba102gkey">Ba102gkey:</label></td>
+				<td>@Html.TextBox("ba102gkey", Model.ba102gkey, new { @id="txtba102gkey", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="ba103gkey">Ba103gkey:</label></td>
+				<td>@Html.TextBox("ba103gkey", Model.ba103gkey, new { @id="txtba103gkey", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="ba119gkey">Ba119gkey:</label></td>
+				<td>@Html.TextBox("ba119gkey", Model.ba119gkey, new { @id="txtba119gkey", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="ba118gkey">Ba118gkey:</label></td>
+				<td>@Html.TextBox("ba118gkey", Model.ba118gkey, new { @id="txtba118gkey", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="ba121gkey">Ba121gkey:</label></td>
+				<td>@Html.TextBox("ba121gkey", Model.ba121gkey, new { @id="txtba121gkey", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="ba104gkey">Ba104gkey:</label></td>
+				<td>@Html.TextBox("ba104gkey", Model.ba104gkey, new { @id="txtba104gkey", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="ba209gkey">Ba209gkey:</label></td>
+				<td>@Html.TextBox("ba209gkey", Model.ba209gkey, new { @id="txtba209gkey", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="returnamt">Returnamt:</label></td>
+				<td>
+						<div class="input-group">
+							<div class="input-group-addon">$</div>
+							@Html.TextBox("returnamt", Model.returnamt, new { @id="txtreturnamt", @class = "form-control text-right", @style="width:150px;" }) 
+						</div>
+					</td>
+            </tr>
+			<tr>
+                <td><label for="canadaamt">Canadaamt:</label></td>
+				<td>
+						<div class="input-group">
+							<div class="input-group-addon">$</div>
+							@Html.TextBox("canadaamt", Model.canadaamt, new { @id="txtcanadaamt", @class = "form-control text-right", @style="width:150px;" }) 
+						</div>
+					</td>
+            </tr>
+			<tr>
+                <td><label for="freightamt">Freightamt:</label></td>
+				<td>
+						<div class="input-group">
+							<div class="input-group-addon">$</div>
+							@Html.TextBox("freightamt", Model.freightamt, new { @id="txtfreightamt", @class = "form-control text-right", @style="width:150px;" }) 
+						</div>
+					</td>
+            </tr>
+			<tr>
+                <td><label for="proceamt">Proceamt:</label></td>
+				<td>
+						<div class="input-group">
+							<div class="input-group-addon">$</div>
+							@Html.TextBox("proceamt", Model.proceamt, new { @id="txtproceamt", @class = "form-control text-right", @style="width:150px;" }) 
+						</div>
+					</td>
+            </tr>
+			<tr>
+                <td><label for="insuredamt">Insuredamt:</label></td>
+				<td>
+						<div class="input-group">
+							<div class="input-group-addon">$</div>
+							@Html.TextBox("insuredamt", Model.insuredamt, new { @id="txtinsuredamt", @class = "form-control text-right", @style="width:150px;" }) 
+						</div>
+					</td>
+            </tr>
+			<tr>
+                <td><label for="pickupamt">Pickupamt:</label></td>
+				<td>
+						<div class="input-group">
+							<div class="input-group-addon">$</div>
+							@Html.TextBox("pickupamt", Model.pickupamt, new { @id="txtpickupamt", @class = "form-control text-right", @style="width:150px;" }) 
+						</div>
+					</td>
+            </tr>
+			<tr>
+                <td><label for="discountamt">Discountamt:</label></td>
+				<td>
+						<div class="input-group">
+							<div class="input-group-addon">$</div>
+							@Html.TextBox("discountamt", Model.discountamt, new { @id="txtdiscountamt", @class = "form-control text-right", @style="width:150px;" }) 
+						</div>
+					</td>
+            </tr>
+			<tr>
+                <td><label for="vouchersamt">Vouchersamt:</label></td>
+				<td>
+						<div class="input-group">
+							<div class="input-group-addon">$</div>
+							@Html.TextBox("vouchersamt", Model.vouchersamt, new { @id="txtvouchersamt", @class = "form-control text-right", @style="width:150px;" }) 
+						</div>
+					</td>
+            </tr>
+			<tr>
+                <td><label for="reservatamt">Reservatamt:</label></td>
+				<td>
+						<div class="input-group">
+							<div class="input-group-addon">$</div>
+							@Html.TextBox("reservatamt", Model.reservatamt, new { @id="txtreservatamt", @class = "form-control text-right", @style="width:150px;" }) 
+						</div>
+					</td>
+            </tr>
+			<tr>
+                <td><label for="activityamt">Activityamt:</label></td>
+				<td>
+						<div class="input-group">
+							<div class="input-group-addon">$</div>
+							@Html.TextBox("activityamt", Model.activityamt, new { @id="txtactivityamt", @class = "form-control text-right", @style="width:150px;" }) 
+						</div>
+					</td>
+            </tr>
+			<tr>
+                <td><label for="totalfreight">Totalfreight:</label></td>
+				<td>
+						<div class="input-group">
+							<div class="input-group-addon">$</div>
+							@Html.TextBox("totalfreight", Model.totalfreight, new { @id="txttotalfreight", @class = "form-control text-right", @style="width:150px;" }) 
+						</div>
+					</td>
+            </tr>
+			<tr>
+                <td><label for="totaltreatment">Totaltreatment:</label></td>
+				<td>
+						<div class="input-group">
+							<div class="input-group-addon">$</div>
+							@Html.TextBox("totaltreatment", Model.totaltreatment, new { @id="txttotaltreatment", @class = "form-control text-right", @style="width:150px;" }) 
+						</div>
+					</td>
+            </tr>
+			<tr>
+                <td><label for="totalinsurance">Totalinsurance:</label></td>
+				<td>
+						<div class="input-group">
+							<div class="input-group-addon">$</div>
+							@Html.TextBox("totalinsurance", Model.totalinsurance, new { @id="txttotalinsurance", @class = "form-control text-right", @style="width:150px;" }) 
+						</div>
+					</td>
+            </tr>
+			<tr>
+                <td><label for="totalamt">Totalamt:</label></td>
+				<td>
+						<div class="input-group">
+							<div class="input-group-addon">$</div>
+							@Html.TextBox("totalamt", Model.totalamt, new { @id="txttotalamt", @class = "form-control text-right", @style="width:150px;" }) 
+						</div>
+					</td>
+            </tr>
+			<tr>
+                <td><label for="pairs">Pairs:</label></td>
+				<td>@Html.TextBox("pairs", Model.pairs, new { @id="txtpairs", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="remark">Remark:</label></td>
+				<td>@Html.TextArea("remark", Model.remark.ToString(), new { @id="txtremark", @class = "form-control", @rows=5, @cols=40})</td>
+            </tr>
+			<tr>
+                <td><label for="ba005gkey">Ba005gkey:</label></td>
+				<td>@Html.TextBox("ba005gkey", Model.ba005gkey, new { @id="txtba005gkey", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="modifydate">Modify Date:</label></td>
+				<td>@Html.TextBox("modifydate", Model.modifydate, new { @id="txtmodifydate", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="revisedate">Revise Date:</label></td>
+				<td>@Html.TextBox("revisedate", Model.revisedate, new { @id="txtrevisedate", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="approve">Approve:</label></td>
+				<td>@Html.TextBox("approve", Model.approve, new { @id="txtapprove", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="aes101gkey">Aes101gkey:</label></td>
+				<td>@Html.TextBox("aes101gkey", Model.aes101gkey, new { @id="txtaes101gkey", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="ses101gkey">Ses101gkey:</label></td>
+				<td>@Html.TextBox("ses101gkey", Model.ses101gkey, new { @id="txtses101gkey", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="es101gkey">Es101gkey:</label></td>
+				<td>@Html.TextBox("es101gkey", Model.es101gkey, new { @id="txtes101gkey", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="replication_create">Replication Create:</label></td>
+				<td>@Html.TextBox("replication_create", Model.replication_create, new { @id="txtreplication_create", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="replication_update">Replication Up Date:</label></td>
+				<td>@Html.TextBox("replication_update", Model.replication_update, new { @id="txtreplication_update", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="rownum">Rownum:</label></td>
+				<td>
+						<div class="input-group">
+							<div class="input-group-addon">$</div>
+							@Html.TextBox("rownum", Model.rownum, new { @id="txtrownum", @class = "form-control text-right", @style="width:150px;" }) 
+						</div>
+					</td>
+            </tr>
+			<tr>
+                <td><label for="addproceamt">Addproceamt:</label></td>
+				<td>
+						<div class="input-group">
+							<div class="input-group-addon">$</div>
+							@Html.TextBox("addproceamt", Model.addproceamt, new { @id="txtaddproceamt", @class = "form-control text-right", @style="width:150px;" }) 
+						</div>
+					</td>
+            </tr>
+			<tr>
+                <td><label for="lossproceamt">Lossproceamt:</label></td>
+				<td>
+						<div class="input-group">
+							<div class="input-group-addon">$</div>
+							@Html.TextBox("lossproceamt", Model.lossproceamt, new { @id="txtlossproceamt", @class = "form-control text-right", @style="width:150px;" }) 
+						</div>
+					</td>
+            </tr>
+			<tr>
+                <td><label for="virementamt">Virementamt:</label></td>
+				<td>
+						<div class="input-group">
+							<div class="input-group-addon">$</div>
+							@Html.TextBox("virementamt", Model.virementamt, new { @id="txtvirementamt", @class = "form-control text-right", @style="width:150px;" }) 
+						</div>
+					</td>
+            </tr>
+			<tr>
+                <td><label for="ba040gkey">Ba040gkey:</label></td>
+				<td>@Html.TextBox("ba040gkey", Model.ba040gkey, new { @id="txtba040gkey", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="ba040gkey1">Ba040gkey1:</label></td>
+				<td>@Html.TextBox("ba040gkey1", Model.ba040gkey1, new { @id="txtba040gkey1", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="receivabledate">Receivable Date:</label></td>
+				<td>@Html.TextBox("receivabledate", Model.receivabledate, new { @id="txtreceivabledate", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="receivableamt">Receivableamt:</label></td>
+				<td>
+						<div class="input-group">
+							<div class="input-group-addon">$</div>
+							@Html.TextBox("receivableamt", Model.receivableamt, new { @id="txtreceivableamt", @class = "form-control text-right", @style="width:150px;" }) 
+						</div>
+					</td>
+            </tr>
+			<tr>
+                <td><label for="virementdate">Virement Date:</label></td>
+				<td>@Html.TextBox("virementdate", Model.virementdate, new { @id="txtvirementdate", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="salesamt">Salesamt:</label></td>
+				<td>
+						<div class="input-group">
+							<div class="input-group-addon">$</div>
+							@Html.TextBox("salesamt", Model.salesamt, new { @id="txtsalesamt", @class = "form-control text-right", @style="width:150px;" }) 
+						</div>
+					</td>
+            </tr>
+			<tr>
+                <td><label for="collchk">Collchk:</label></td>
+				<td>@Html.TextBox("collchk", Model.collchk, new { @id="txtcollchk", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="payfreight">Payfreight:</label></td>
+				<td>
+						<div class="input-group">
+							<div class="input-group-addon">$</div>
+							@Html.TextBox("payfreight", Model.payfreight, new { @id="txtpayfreight", @class = "form-control text-right", @style="width:150px;" }) 
+						</div>
+					</td>
+            </tr>
+			<tr>
+                <td><label for="strchk">Strchk:</label></td>
+				<td>@Html.TextBox("strchk", Model.strchk, new { @id="txtstrchk", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="noamount">Noamount:</label></td>
+				<td>
+						<div class="input-group">
+							<div class="input-group-addon">$</div>
+							@Html.TextBox("noamount", Model.noamount, new { @id="txtnoamount", @class = "form-control text-right", @style="width:150px;" }) 
+						</div>
+					</td>
+            </tr>
+			<tr>
+                <td><label for="totalamount">Totalamount:</label></td>
+				<td>
+						<div class="input-group">
+							<div class="input-group-addon">$</div>
+							@Html.TextBox("totalamount", Model.totalamount, new { @id="txttotalamount", @class = "form-control text-right", @style="width:150px;" }) 
+						</div>
+					</td>
+            </tr>
+			<tr>
+                <td><label for="ba101gkey">Ba101gkey:</label></td>
+				<td>@Html.TextBox("ba101gkey", Model.ba101gkey, new { @id="txtba101gkey", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="remittancedate">Remittance Date:</label></td>
+				<td>@Html.TextBox("remittancedate", Model.remittancedate, new { @id="txtremittancedate", @class = "form-control"}) </td>
+            </tr>
+			<tr>
+                <td><label for="remittancetime">Remittancetime:</label></td>
+				<td>@Html.TextBox("remittancetime", Model.remittancetime, new { @id="txtremittancetime", @class = "form-control"}) </td>
+            </tr>
+			</table>
+		</div>
+		<div class="panel-footer">
+			<div class="row">
+				<div class="pull-right">
+					<button id="btnSearch" type="submit" value="Search" class="btn btn-primary">Search</button>&nbsp;
+					<a href="@Url.Action("Index", "sa106")" class="btn btn-primary">Clear</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Kendo Grid -->
+<div>
+    <div id="grid"></div>
+</div>
+
+<!-- Script for Kendo Grid -->
+@section Scripts
+{
+    <script src="~/Scripts/Kendoui/jszip.min.js"></script>
+    <script src="~/Scripts/Kendoui/kendo.all.min.js"></script>
+    <script>
+        $(document).ready(function () {
+			var btns = "<a href='/sa106/Edit/#: gkey #'><i class='glyphicon glyphicon-pencil'></i></a>&nbsp;";
+			btns += "<a href='/sa106/Details/#: gkey #'><i class='glyphicon glyphicon-search'></i></a>&nbsp;";
+			btns += "<a data-url='/sa106/Delete/#: gkey #' style='cursor:pointer' data-mr200gkey='#: mr200gkey #' onclick='DeleteItem(this)'><i class='glyphicon glyphicon-trash'></i></a>";
+
+            $("#grid").kendoGrid({
+                toolbar: [{text: "Add", template: '<a class="k-button" href="/sa106/Create">Add</a>' }, { name: "excel", text: "" }, { name: "pdf", text: "" }],
+                excel: {
+                    fileName: "sa106.xlsx",
+                    allPages: true
+                },
+                pdf: {
+                    fileName: "sa106.pdf",
+                    allPages: true
+                },
+                dataSource: {
+                    transport: {
+                        read: "/sa106/GetList",
+                        parameterMap: function (data, type) {
+                        	if (type == "read") {
+                        		// send take as "$top" and skip as "$skip"
+                        		var sortExpr = "";
+                        		if (data.sort)
+                        			sortExpr = data.sort[0]['field'] + ' ' + data.sort[0]['dir']
+                        		return {
+                        			sortExpression: sortExpr,
+                        			pageSize: data.pageSize,
+                        			pageIndex: data.page,
+									skip: data.skip,
+									filter: data.filter
+                        		};
+                        	}
+                        }
+                    },
+                    schema: {
+                        data: function (result) {
+                            return result.data;
+                        },
+                        total: function (result) {
+                            return result.pageSize;
+                        },
+                        model: {
+                            fields: {
+								gkey: { type: "string"},
+								orddate: { type: "datetime"},
+								mr200gkey: { type: "string"},
+								issuedate: { type: "datetime"},
+								pono: { type: "string"},
+								salesno: { type: "string"},
+								returnno: { type: "string"},
+								returndate: { type: "datetime"},
+								deliveryno: { type: "string"},
+								rettype: { type: "string"},
+								xtype: { type: "string"},
+								ba205gkey: { type: "string"},
+								pickupdate: { type: "datetime"},
+								canceldate: { type: "datetime"},
+								ba100gkey: { type: "string"},
+								ba102gkey: { type: "string"},
+								ba103gkey: { type: "string"},
+								ba119gkey: { type: "string"},
+								ba118gkey: { type: "string"},
+								ba121gkey: { type: "string"},
+								ba104gkey: { type: "string"},
+								ba209gkey: { type: "string"},
+								returnamt: { type: "number"},
+								canadaamt: { type: "number"},
+								freightamt: { type: "number"},
+								proceamt: { type: "number"},
+								insuredamt: { type: "number"},
+								pickupamt: { type: "number"},
+								discountamt: { type: "number"},
+								vouchersamt: { type: "number"},
+								reservatamt: { type: "number"},
+								activityamt: { type: "number"},
+								totalfreight: { type: "number"},
+								totaltreatment: { type: "number"},
+								totalinsurance: { type: "number"},
+								totalamt: { type: "number"},
+								pairs: { type: "number"},
+								remark: { type: "string"},
+								ba005gkey: { type: "string"},
+								modifydate: { type: "datetime"},
+								revisedate: { type: "datetime"},
+								approve: { type: "string"},
+								aes101gkey: { type: "string"},
+								ses101gkey: { type: "string"},
+								es101gkey: { type: "string"},
+								replication_create: { type: "datetime"},
+								replication_update: { type: "datetime"},
+								rownum: { type: "number"},
+								addproceamt: { type: "number"},
+								lossproceamt: { type: "number"},
+								virementamt: { type: "number"},
+								ba040gkey: { type: "string"},
+								ba040gkey1: { type: "string"},
+								receivabledate: { type: "datetime"},
+								receivableamt: { type: "number"},
+								virementdate: { type: "datetime"},
+								salesamt: { type: "number"},
+								collchk: { type: "string"},
+								payfreight: { type: "number"},
+								strchk: { type: "string"},
+								noamount: { type: "number"},
+								totalamount: { type: "number"},
+								ba101gkey: { type: "string"},
+								remittancedate: { type: "datetime"},
+								remittancetime: { type: "datetime"},
+
+                            }
+                        }
+                    },
+                    serverPaging: true,
+                    serverFiltering: true,
+                    serverSorting: true
+                },
+                pageable: {
+                    refresh: true,
+                    pageSize: 10,
+                    allPages: true,
+                    pageSizes: [10, 25, 50, 100, 'All'],
+                    buttonCount: 5
+                },
+                columnMenu: true,
+                filterable: {
+                    extra: false,
+                    operators: {
+                        string: {
+                            startswith: "Starts with",
+                            eq: "Is equal to",
+                            neq: "Is not equal to"
+                        }
+                    }
+                },
+                sortable: true,
+                columns: [
+                    {
+                        template: btns,
+                        title: "Action",
+						width: 100
+                    },
+						{ field: 'gkey', title: 'Gkey', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'orddate', title: 'Ord Date', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" }, template: "#= kendo.toString(kendo.parseDate(orddate, 'yyyy-MM-dd'), 'MM/dd/yyyy') #" },
+						{ field: 'mr200gkey', title: 'Mr200gkey', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'issuedate', title: 'Issue Date', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" }, template: "#= kendo.toString(kendo.parseDate(issuedate, 'yyyy-MM-dd'), 'MM/dd/yyyy') #" },
+						{ field: 'pono', title: 'Pono', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'salesno', title: 'Salesno', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'returnno', title: 'Returnno', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'returndate', title: 'Return Date', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" }, template: "#= kendo.toString(kendo.parseDate(returndate, 'yyyy-MM-dd'), 'MM/dd/yyyy') #" },
+						{ field: 'deliveryno', title: 'Deliveryno', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'rettype', title: 'Ret Type', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'xtype', title: 'X Type', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'ba205gkey', title: 'Ba205gkey', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'pickupdate', title: 'Pickup Date', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" }, template: "#= kendo.toString(kendo.parseDate(pickupdate, 'yyyy-MM-dd'), 'MM/dd/yyyy') #" },
+						{ field: 'canceldate', title: 'Cancel Date', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" }, template: "#= kendo.toString(kendo.parseDate(canceldate, 'yyyy-MM-dd'), 'MM/dd/yyyy') #" },
+						{ field: 'ba100gkey', title: 'Ba100gkey', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'ba102gkey', title: 'Ba102gkey', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'ba103gkey', title: 'Ba103gkey', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'ba119gkey', title: 'Ba119gkey', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'ba118gkey', title: 'Ba118gkey', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'ba121gkey', title: 'Ba121gkey', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'ba104gkey', title: 'Ba104gkey', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'ba209gkey', title: 'Ba209gkey', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'returnamt', title: 'Returnamt', sortable: true, hidden: false, attributes: { "style": "text-align:Right;" } },
+						{ field: 'canadaamt', title: 'Canadaamt', sortable: true, hidden: false, attributes: { "style": "text-align:Right;" } },
+						{ field: 'freightamt', title: 'Freightamt', sortable: true, hidden: false, attributes: { "style": "text-align:Right;" } },
+						{ field: 'proceamt', title: 'Proceamt', sortable: true, hidden: false, attributes: { "style": "text-align:Right;" } },
+						{ field: 'insuredamt', title: 'Insuredamt', sortable: true, hidden: false, attributes: { "style": "text-align:Right;" } },
+						{ field: 'pickupamt', title: 'Pickupamt', sortable: true, hidden: false, attributes: { "style": "text-align:Right;" } },
+						{ field: 'discountamt', title: 'Discountamt', sortable: true, hidden: false, attributes: { "style": "text-align:Right;" } },
+						{ field: 'vouchersamt', title: 'Vouchersamt', sortable: true, hidden: false, attributes: { "style": "text-align:Right;" } },
+						{ field: 'reservatamt', title: 'Reservatamt', sortable: true, hidden: false, attributes: { "style": "text-align:Right;" } },
+						{ field: 'activityamt', title: 'Activityamt', sortable: true, hidden: false, attributes: { "style": "text-align:Right;" } },
+						{ field: 'totalfreight', title: 'Totalfreight', sortable: true, hidden: false, attributes: { "style": "text-align:Right;" } },
+						{ field: 'totaltreatment', title: 'Totaltreatment', sortable: true, hidden: false, attributes: { "style": "text-align:Right;" } },
+						{ field: 'totalinsurance', title: 'Totalinsurance', sortable: true, hidden: false, attributes: { "style": "text-align:Right;" } },
+						{ field: 'totalamt', title: 'Totalamt', sortable: true, hidden: false, attributes: { "style": "text-align:Right;" } },
+						{ field: 'pairs', title: 'Pairs', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'remark', title: 'Remark', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'ba005gkey', title: 'Ba005gkey', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'modifydate', title: 'Modify Date', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" }, template: "#= kendo.toString(kendo.parseDate(modifydate, 'yyyy-MM-dd'), 'MM/dd/yyyy') #" },
+						{ field: 'revisedate', title: 'Revise Date', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" }, template: "#= kendo.toString(kendo.parseDate(revisedate, 'yyyy-MM-dd'), 'MM/dd/yyyy') #" },
+						{ field: 'approve', title: 'Approve', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'aes101gkey', title: 'Aes101gkey', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'ses101gkey', title: 'Ses101gkey', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'es101gkey', title: 'Es101gkey', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'replication_create', title: 'Replication_create', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" }, template: "#= kendo.toString(kendo.parseDate(replication_create, 'yyyy-MM-dd'), 'MM/dd/yyyy') #" },
+						{ field: 'replication_update', title: 'Replication_up Date', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" }, template: "#= kendo.toString(kendo.parseDate(replication_update, 'yyyy-MM-dd'), 'MM/dd/yyyy') #" },
+						{ field: 'rownum', title: 'Rownum', sortable: true, hidden: false, attributes: { "style": "text-align:Right;" } },
+						{ field: 'addproceamt', title: 'Addproceamt', sortable: true, hidden: false, attributes: { "style": "text-align:Right;" } },
+						{ field: 'lossproceamt', title: 'Lossproceamt', sortable: true, hidden: false, attributes: { "style": "text-align:Right;" } },
+						{ field: 'virementamt', title: 'Virementamt', sortable: true, hidden: false, attributes: { "style": "text-align:Right;" } },
+						{ field: 'ba040gkey', title: 'Ba040gkey', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'ba040gkey1', title: 'Ba040gkey1', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'receivabledate', title: 'Receivable Date', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" }, template: "#= kendo.toString(kendo.parseDate(receivabledate, 'yyyy-MM-dd'), 'MM/dd/yyyy') #" },
+						{ field: 'receivableamt', title: 'Receivableamt', sortable: true, hidden: false, attributes: { "style": "text-align:Right;" } },
+						{ field: 'virementdate', title: 'Virement Date', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" }, template: "#= kendo.toString(kendo.parseDate(virementdate, 'yyyy-MM-dd'), 'MM/dd/yyyy') #" },
+						{ field: 'salesamt', title: 'Salesamt', sortable: true, hidden: false, attributes: { "style": "text-align:Right;" } },
+						{ field: 'collchk', title: 'Collchk', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'payfreight', title: 'Payfreight', sortable: true, hidden: false, attributes: { "style": "text-align:Right;" } },
+						{ field: 'strchk', title: 'Strchk', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'noamount', title: 'Noamount', sortable: true, hidden: false, attributes: { "style": "text-align:Right;" } },
+						{ field: 'totalamount', title: 'Totalamount', sortable: true, hidden: false, attributes: { "style": "text-align:Right;" } },
+						{ field: 'ba101gkey', title: 'Ba101gkey', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" } },
+						{ field: 'remittancedate', title: 'Remittance Date', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" }, template: "#= kendo.toString(kendo.parseDate(remittancedate, 'yyyy-MM-dd'), 'MM/dd/yyyy') #" },
+						{ field: 'remittancetime', title: 'Remittancetime', sortable: true, hidden: false, attributes: { "style": "text-align:Left;" }, template: "#= kendo.toString(kendo.parseDate(remittancetime, 'yyyy-MM-dd'), 'MM/dd/yyyy') #" }
+
+                ]
+            });
+        });
+        $("#btnSearch").click(function () {
+            $filter = new Array();
+			
+			
+			$gkey = $("#txtgkey").val();
+            if ($gkey) {
+                $filter.push({ field: "gkey", operator: "contains", value: $gkey });
+            }
+
+			$orddate = $("#txtorddate").val();
+            if ($orddate) {
+                $filter.push({ field: "orddate", operator: "contains", value: $orddate });
+            }
+
+			$mr200gkey = $("#txtmr200gkey").val();
+            if ($mr200gkey) {
+                $filter.push({ field: "mr200gkey", operator: "contains", value: $mr200gkey });
+            }
+
+			$issuedate = $("#txtissuedate").val();
+            if ($issuedate) {
+                $filter.push({ field: "issuedate", operator: "contains", value: $issuedate });
+            }
+
+			$pono = $("#txtpono").val();
+            if ($pono) {
+                $filter.push({ field: "pono", operator: "contains", value: $pono });
+            }
+
+			$salesno = $("#txtsalesno").val();
+            if ($salesno) {
+                $filter.push({ field: "salesno", operator: "contains", value: $salesno });
+            }
+
+			$returnno = $("#txtreturnno").val();
+            if ($returnno) {
+                $filter.push({ field: "returnno", operator: "contains", value: $returnno });
+            }
+
+			$returndate = $("#txtreturndate").val();
+            if ($returndate) {
+                $filter.push({ field: "returndate", operator: "contains", value: $returndate });
+            }
+
+			$deliveryno = $("#txtdeliveryno").val();
+            if ($deliveryno) {
+                $filter.push({ field: "deliveryno", operator: "contains", value: $deliveryno });
+            }
+
+			$rettype = $("#txtrettype").val();
+            if ($rettype) {
+                $filter.push({ field: "rettype", operator: "contains", value: $rettype });
+            }
+
+			$xtype = $("#txtxtype").val();
+            if ($xtype) {
+                $filter.push({ field: "xtype", operator: "contains", value: $xtype });
+            }
+
+			$ba205gkey = $("#txtba205gkey").val();
+            if ($ba205gkey) {
+                $filter.push({ field: "ba205gkey", operator: "contains", value: $ba205gkey });
+            }
+
+			$pickupdate = $("#txtpickupdate").val();
+            if ($pickupdate) {
+                $filter.push({ field: "pickupdate", operator: "contains", value: $pickupdate });
+            }
+
+			$canceldate = $("#txtcanceldate").val();
+            if ($canceldate) {
+                $filter.push({ field: "canceldate", operator: "contains", value: $canceldate });
+            }
+
+			$ba100gkey = $("#txtba100gkey").val();
+            if ($ba100gkey) {
+                $filter.push({ field: "ba100gkey", operator: "contains", value: $ba100gkey });
+            }
+
+			$ba102gkey = $("#txtba102gkey").val();
+            if ($ba102gkey) {
+                $filter.push({ field: "ba102gkey", operator: "contains", value: $ba102gkey });
+            }
+
+			$ba103gkey = $("#txtba103gkey").val();
+            if ($ba103gkey) {
+                $filter.push({ field: "ba103gkey", operator: "contains", value: $ba103gkey });
+            }
+
+			$ba119gkey = $("#txtba119gkey").val();
+            if ($ba119gkey) {
+                $filter.push({ field: "ba119gkey", operator: "contains", value: $ba119gkey });
+            }
+
+			$ba118gkey = $("#txtba118gkey").val();
+            if ($ba118gkey) {
+                $filter.push({ field: "ba118gkey", operator: "contains", value: $ba118gkey });
+            }
+
+			$ba121gkey = $("#txtba121gkey").val();
+            if ($ba121gkey) {
+                $filter.push({ field: "ba121gkey", operator: "contains", value: $ba121gkey });
+            }
+
+			$ba104gkey = $("#txtba104gkey").val();
+            if ($ba104gkey) {
+                $filter.push({ field: "ba104gkey", operator: "contains", value: $ba104gkey });
+            }
+
+			$ba209gkey = $("#txtba209gkey").val();
+            if ($ba209gkey) {
+                $filter.push({ field: "ba209gkey", operator: "contains", value: $ba209gkey });
+            }
+
+			$returnamt = $("#txtreturnamt").val();
+            if ($returnamt && $returnamt != 0) {
+                $filter.push({ field: "returnamt", operator: "eq", value: $returnamt });
+            }
+
+			$canadaamt = $("#txtcanadaamt").val();
+            if ($canadaamt && $canadaamt != 0) {
+                $filter.push({ field: "canadaamt", operator: "eq", value: $canadaamt });
+            }
+
+			$freightamt = $("#txtfreightamt").val();
+            if ($freightamt && $freightamt != 0) {
+                $filter.push({ field: "freightamt", operator: "eq", value: $freightamt });
+            }
+
+			$proceamt = $("#txtproceamt").val();
+            if ($proceamt && $proceamt != 0) {
+                $filter.push({ field: "proceamt", operator: "eq", value: $proceamt });
+            }
+
+			$insuredamt = $("#txtinsuredamt").val();
+            if ($insuredamt && $insuredamt != 0) {
+                $filter.push({ field: "insuredamt", operator: "eq", value: $insuredamt });
+            }
+
+			$pickupamt = $("#txtpickupamt").val();
+            if ($pickupamt && $pickupamt != 0) {
+                $filter.push({ field: "pickupamt", operator: "eq", value: $pickupamt });
+            }
+
+			$discountamt = $("#txtdiscountamt").val();
+            if ($discountamt && $discountamt != 0) {
+                $filter.push({ field: "discountamt", operator: "eq", value: $discountamt });
+            }
+
+			$vouchersamt = $("#txtvouchersamt").val();
+            if ($vouchersamt && $vouchersamt != 0) {
+                $filter.push({ field: "vouchersamt", operator: "eq", value: $vouchersamt });
+            }
+
+			$reservatamt = $("#txtreservatamt").val();
+            if ($reservatamt && $reservatamt != 0) {
+                $filter.push({ field: "reservatamt", operator: "eq", value: $reservatamt });
+            }
+
+			$activityamt = $("#txtactivityamt").val();
+            if ($activityamt && $activityamt != 0) {
+                $filter.push({ field: "activityamt", operator: "eq", value: $activityamt });
+            }
+
+			$totalfreight = $("#txttotalfreight").val();
+            if ($totalfreight && $totalfreight != 0) {
+                $filter.push({ field: "totalfreight", operator: "eq", value: $totalfreight });
+            }
+
+			$totaltreatment = $("#txttotaltreatment").val();
+            if ($totaltreatment && $totaltreatment != 0) {
+                $filter.push({ field: "totaltreatment", operator: "eq", value: $totaltreatment });
+            }
+
+			$totalinsurance = $("#txttotalinsurance").val();
+            if ($totalinsurance && $totalinsurance != 0) {
+                $filter.push({ field: "totalinsurance", operator: "eq", value: $totalinsurance });
+            }
+
+			$totalamt = $("#txttotalamt").val();
+            if ($totalamt && $totalamt != 0) {
+                $filter.push({ field: "totalamt", operator: "eq", value: $totalamt });
+            }
+
+			$pairs = $("#txtpairs").val();
+            if ($pairs) {
+                $filter.push({ field: "pairs", operator: "contains", value: $pairs });
+            }
+
+			$remark = $("#txtremark").val();
+            if ($remark) {
+                $filter.push({ field: "remark", operator: "contains", value: $remark });
+            }
+
+			$ba005gkey = $("#txtba005gkey").val();
+            if ($ba005gkey) {
+                $filter.push({ field: "ba005gkey", operator: "contains", value: $ba005gkey });
+            }
+
+			$modifydate = $("#txtmodifydate").val();
+            if ($modifydate) {
+                $filter.push({ field: "modifydate", operator: "contains", value: $modifydate });
+            }
+
+			$revisedate = $("#txtrevisedate").val();
+            if ($revisedate) {
+                $filter.push({ field: "revisedate", operator: "contains", value: $revisedate });
+            }
+
+			$approve = $("#txtapprove").val();
+            if ($approve) {
+                $filter.push({ field: "approve", operator: "contains", value: $approve });
+            }
+
+			$aes101gkey = $("#txtaes101gkey").val();
+            if ($aes101gkey) {
+                $filter.push({ field: "aes101gkey", operator: "contains", value: $aes101gkey });
+            }
+
+			$ses101gkey = $("#txtses101gkey").val();
+            if ($ses101gkey) {
+                $filter.push({ field: "ses101gkey", operator: "contains", value: $ses101gkey });
+            }
+
+			$es101gkey = $("#txtes101gkey").val();
+            if ($es101gkey) {
+                $filter.push({ field: "es101gkey", operator: "contains", value: $es101gkey });
+            }
+
+			$replication_create = $("#txtreplication_create").val();
+            if ($replication_create) {
+                $filter.push({ field: "replication_create", operator: "contains", value: $replication_create });
+            }
+
+			$replication_update = $("#txtreplication_update").val();
+            if ($replication_update) {
+                $filter.push({ field: "replication_update", operator: "contains", value: $replication_update });
+            }
+
+			$rownum = $("#txtrownum").val();
+            if ($rownum && $rownum != 0) {
+                $filter.push({ field: "rownum", operator: "eq", value: $rownum });
+            }
+
+			$addproceamt = $("#txtaddproceamt").val();
+            if ($addproceamt && $addproceamt != 0) {
+                $filter.push({ field: "addproceamt", operator: "eq", value: $addproceamt });
+            }
+
+			$lossproceamt = $("#txtlossproceamt").val();
+            if ($lossproceamt && $lossproceamt != 0) {
+                $filter.push({ field: "lossproceamt", operator: "eq", value: $lossproceamt });
+            }
+
+			$virementamt = $("#txtvirementamt").val();
+            if ($virementamt && $virementamt != 0) {
+                $filter.push({ field: "virementamt", operator: "eq", value: $virementamt });
+            }
+
+			$ba040gkey = $("#txtba040gkey").val();
+            if ($ba040gkey) {
+                $filter.push({ field: "ba040gkey", operator: "contains", value: $ba040gkey });
+            }
+
+			$ba040gkey1 = $("#txtba040gkey1").val();
+            if ($ba040gkey1) {
+                $filter.push({ field: "ba040gkey1", operator: "contains", value: $ba040gkey1 });
+            }
+
+			$receivabledate = $("#txtreceivabledate").val();
+            if ($receivabledate) {
+                $filter.push({ field: "receivabledate", operator: "contains", value: $receivabledate });
+            }
+
+			$receivableamt = $("#txtreceivableamt").val();
+            if ($receivableamt && $receivableamt != 0) {
+                $filter.push({ field: "receivableamt", operator: "eq", value: $receivableamt });
+            }
+
+			$virementdate = $("#txtvirementdate").val();
+            if ($virementdate) {
+                $filter.push({ field: "virementdate", operator: "contains", value: $virementdate });
+            }
+
+			$salesamt = $("#txtsalesamt").val();
+            if ($salesamt && $salesamt != 0) {
+                $filter.push({ field: "salesamt", operator: "eq", value: $salesamt });
+            }
+
+			$collchk = $("#txtcollchk").val();
+            if ($collchk) {
+                $filter.push({ field: "collchk", operator: "contains", value: $collchk });
+            }
+
+			$payfreight = $("#txtpayfreight").val();
+            if ($payfreight && $payfreight != 0) {
+                $filter.push({ field: "payfreight", operator: "eq", value: $payfreight });
+            }
+
+			$strchk = $("#txtstrchk").val();
+            if ($strchk) {
+                $filter.push({ field: "strchk", operator: "contains", value: $strchk });
+            }
+
+			$noamount = $("#txtnoamount").val();
+            if ($noamount && $noamount != 0) {
+                $filter.push({ field: "noamount", operator: "eq", value: $noamount });
+            }
+
+			$totalamount = $("#txttotalamount").val();
+            if ($totalamount && $totalamount != 0) {
+                $filter.push({ field: "totalamount", operator: "eq", value: $totalamount });
+            }
+
+			$ba101gkey = $("#txtba101gkey").val();
+            if ($ba101gkey) {
+                $filter.push({ field: "ba101gkey", operator: "contains", value: $ba101gkey });
+            }
+
+			$remittancedate = $("#txtremittancedate").val();
+            if ($remittancedate) {
+                $filter.push({ field: "remittancedate", operator: "contains", value: $remittancedate });
+            }
+
+			$remittancetime = $("#txtremittancetime").val();
+            if ($remittancetime) {
+                $filter.push({ field: "remittancetime", operator: "contains", value: $remittancetime });
+            }
+
+            var grid = $("#grid").data("kendoGrid");
+            grid.dataSource.filter($filter);
+        });
+
+        function DeleteItem(e) {
+            $("#deleteModal").modal('show');
+            $("#deleteModal #YesDeleteBtn").attr("href", $(e).attr("data-url"));
+            $("#deleteMessage").text("Are you sure you want to delete this sa106 - " + $(e).attr("data-mr200gkey") + " ?");
+        }
+    </script>
+}
+<style type="text/css">
+    span.k-link {
+        padding: 6px !important;
+    }
+	.k-header.k-grid-toolbar a {
+        padding: 2px;
+    }
+</style>
+
+<!-- Model Dialog for Delete record -->
+<div id="deleteModal" class="modal fade" role="dialog">
+    <div class="modal-dialog" style="vertical-align: middle;height: 100%;margin-top:250px">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header" style="background-color:whitesmoke;padding:9px 15px;">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Delete sa106</h4>
+            </div>
+            <div class="modal-body">
+                <p id="deleteMessage"></p>
+            </div>
+            <div class="modal-footer" style="background-color:whitesmoke;padding:9px 15px;">
+                <a class="btn btn-primary" id="YesDeleteBtn">Yes</a>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">No</button>
+            </div>
+        </div>
+    </div>
+</div>

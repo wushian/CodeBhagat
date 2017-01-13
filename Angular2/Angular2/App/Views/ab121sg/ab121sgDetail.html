@@ -1,0 +1,38 @@
+<div data-ng-controller="ab121sgDetails as vmab121sg">
+	<div class="panel panel-primary">
+		<div class="panel-heading">ab121sg Detail</div>
+		<div class="panel-body detail">
+			<div class="form-horizontal">
+				
+			<div class="form-group">
+				<label class="col-xs-3 col-sm-2 control-label">Gkey:</label>
+				<div class="col-xs-9 col-sm-10">
+					{{vmab121sg.ab121sg.gkey}}
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-xs-3 col-sm-2 control-label">Ba015gkey:</label>
+				<div class="col-xs-9 col-sm-10">
+					{{vmab121sg.ab121sg.ba015gkey}}
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-xs-3 col-sm-2 control-label">Ba005gkey:</label>
+				<div class="col-xs-9 col-sm-10">
+					{{vmab121sg.ab121sg.ba005gkey}}
+				</div>
+			</div>
+			</div>
+		</div>
+		<div class="panel-footer clearfix">
+			<div class="pull-left ng-isolate-scope">
+				<a class="btn btn-danger" ng-click="vmab121sg.deleteab121sg(vmab121sg.ab121sg.gkey)"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+			</div>
+			<div class="pull-right ng-isolate-scope">
+				<a class="btn btn-primary" href="/#/ab121sg/Edit/{{vmab121sg.ab121sg.gkey}}"><span class="glyphicon glyphicon-pencil"></span> Edit</a>
+				<a class="btn btn-primary" href="/#/ab121sg"><span class="glyphicon glyphicon-arrow-left"></span> Back to List</a>
+			</div>
+		</div>
+	</div>
+    
+</div>

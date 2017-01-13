@@ -1,0 +1,44 @@
+<div data-ng-controller="ab062sgDetails as vmab062sg">
+	<div class="panel panel-primary">
+		<div class="panel-heading">ab062sg Detail</div>
+		<div class="panel-body detail">
+			<div class="form-horizontal">
+				
+			<div class="form-group">
+				<label class="col-xs-3 col-sm-2 control-label">Gkey:</label>
+				<div class="col-xs-9 col-sm-10">
+					{{vmab062sg.ab062sg.gkey}}
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-xs-3 col-sm-2 control-label">Ba060gkey:</label>
+				<div class="col-xs-9 col-sm-10">
+					{{vmab062sg.ab062sg.ba060gkey}}
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-xs-3 col-sm-2 control-label">Rate:</label>
+				<div class="col-xs-9 col-sm-10">
+					{{vmab062sg.ab062sg.rate}}
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-xs-3 col-sm-2 control-label">Ym:</label>
+				<div class="col-xs-9 col-sm-10">
+					{{vmab062sg.ab062sg.ym}}
+				</div>
+			</div>
+			</div>
+		</div>
+		<div class="panel-footer clearfix">
+			<div class="pull-left ng-isolate-scope">
+				<a class="btn btn-danger" ng-click="vmab062sg.deleteab062sg(vmab062sg.ab062sg.gkey)"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+			</div>
+			<div class="pull-right ng-isolate-scope">
+				<a class="btn btn-primary" href="/#/ab062sg/Edit/{{vmab062sg.ab062sg.gkey}}"><span class="glyphicon glyphicon-pencil"></span> Edit</a>
+				<a class="btn btn-primary" href="/#/ab062sg"><span class="glyphicon glyphicon-arrow-left"></span> Back to List</a>
+			</div>
+		</div>
+	</div>
+    
+</div>

@@ -1,0 +1,182 @@
+﻿.table thead th, .table thead td {
+    position: relative;
+    background-image: none !important;
+}
+
+    .table thead th.sorting:after,
+    .table thead th.sorting_asc:after,
+    .table thead th.sorting_desc:after table.dataTable thead td.sorting:after,
+    .table thead td.sorting_asc:after,
+    .table thead td.sorting_desc:after {
+        position: absolute;
+        top: 12px;
+        right: 8px;
+        display: block;
+        font-family: FontAwesome;
+    }
+
+    .table thead th.sorting:after,
+    .table thead td.sorting:after {
+        content: "\e119";
+        float: right;
+        position: relative;
+        top: 1px;
+        display: inline-block;
+        font-family: 'Glyphicons Halflings';
+        font-style: normal;
+        font-weight: normal;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    .table thead th.sorting_asc:after,
+    .table thead td.sorting_asc:after {
+        content: "\e113";
+        float: right;
+        position: relative;
+        top: 1px;
+        display: inline-block;
+        font-family: 'Glyphicons Halflings';
+        font-style: normal;
+        font-weight: normal;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    .table thead th.sorting_desc:after,
+    .table thead td.sorting_desc:after {
+        content: "\e114";
+        float: right;
+        position: relative;
+        top: 1px;
+        display: inline-block;
+        font-family: 'Glyphicons Halflings';
+        font-style: normal;
+        font-weight: normal;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+.table thead th, .table thead td {
+    width: auto !important;
+}
+
+
+/* BEGIN: CHECKBOX STYLES */
+label {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+input[type=checkbox].css-checkbox {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+}
+
+.css-label {
+    background-image: url('images/checkbox.png');
+}
+
+input[type=checkbox].css-checkbox + label.css-label {
+    padding-left: 22px;
+    height: 20px;
+    display: inline-block;
+    line-height: 20px;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    font-size: 15px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+input[type=checkbox].css-checkbox:checked + label.css-label {
+    background-position: 0 -20px;
+}
+
+.css-checkbox {
+    vertical-align: middle;
+}
+
+.css-label {
+    margin-bottom: 0px;
+}
+/* END: CHECKBOX STYLES */
+
+
+.pagination {
+    margin: 0;
+}
+
+    .pagination .btn-sm {
+        padding: 0px;
+    }
+
+.sorting, .sorting_asc, .sorting_desc {
+    cursor: pointer;
+}
+
+.recorddetail.ng-binding {
+    padding: 3px;
+    margin-bottom: 0px;
+}
+
+.paginate_page.mrb {
+    vertical-align: bottom;
+    font-weight: bold;
+}
+
+.pdt10 {
+    padding-top: 10px;
+}
+
+.glyphicon {
+    top: 2px;
+}
+
+.select2-container.form-control {
+    border: none !important;
+    padding: 0px !important;
+    width: 280px !important;
+}
+.help-block {
+    margin:0px;
+}
+
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.detail .col-xs-9.col-sm-10 {
+    margin-top:7px;
+}
+
+a.btn-sm {
+    cursor:pointer;
+}

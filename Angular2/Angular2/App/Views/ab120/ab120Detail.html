@@ -1,0 +1,122 @@
+<div data-ng-controller="ab120Details as vmab120">
+	<div class="panel panel-primary">
+		<div class="panel-heading">ab120 Detail</div>
+		<div class="panel-body detail">
+			<div class="form-horizontal">
+				
+			<div class="form-group">
+				<label class="col-xs-3 col-sm-2 control-label">Gkey:</label>
+				<div class="col-xs-9 col-sm-10">
+					{{vmab120.ab120.gkey}}
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-xs-3 col-sm-2 control-label">Ba015gkey:</label>
+				<div class="col-xs-9 col-sm-10">
+					{{vmab120.ab120.ba015gkey}}
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-xs-3 col-sm-2 control-label">Ba015gkey1:</label>
+				<div class="col-xs-9 col-sm-10">
+					{{vmab120.ab120.ba015gkey1}}
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-xs-3 col-sm-2 control-label">Ac002gkey1:</label>
+				<div class="col-xs-9 col-sm-10">
+					{{vmab120.ab120.ac002gkey1}}
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-xs-3 col-sm-2 control-label">Ac002gkey2:</label>
+				<div class="col-xs-9 col-sm-10">
+					{{vmab120.ab120.ac002gkey2}}
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-xs-3 col-sm-2 control-label">Ac002gkey3:</label>
+				<div class="col-xs-9 col-sm-10">
+					{{vmab120.ab120.ac002gkey3}}
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-xs-3 col-sm-2 control-label">Ac002gkey4:</label>
+				<div class="col-xs-9 col-sm-10">
+					{{vmab120.ab120.ac002gkey4}}
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-xs-3 col-sm-2 control-label">Ab041gkey1:</label>
+				<div class="col-xs-9 col-sm-10">
+					{{vmab120.ab120.ab041gkey1}}
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-xs-3 col-sm-2 control-label">Accountno1:</label>
+				<div class="col-xs-9 col-sm-10">
+					{{vmab120.ab120.accountno1}}
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-xs-3 col-sm-2 control-label">Ab041gkey2:</label>
+				<div class="col-xs-9 col-sm-10">
+					{{vmab120.ab120.ab041gkey2}}
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-xs-3 col-sm-2 control-label">Accountno2:</label>
+				<div class="col-xs-9 col-sm-10">
+					{{vmab120.ab120.accountno2}}
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-xs-3 col-sm-2 control-label">Clsdd:</label>
+				<div class="col-xs-9 col-sm-10">
+					{{vmab120.ab120.clsdd}}
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-xs-3 col-sm-2 control-label">Mmend:</label>
+				<div class="col-xs-9 col-sm-10">
+					{{vmab120.ab120.mmend}}
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-xs-3 col-sm-2 control-label">Chkdd:</label>
+				<div class="col-xs-9 col-sm-10">
+					{{vmab120.ab120.chkdd}}
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-xs-3 col-sm-2 control-label">Payee:</label>
+				<div class="col-xs-9 col-sm-10">
+					{{vmab120.ab120.payee}}
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-xs-3 col-sm-2 control-label">Bankinfo:</label>
+				<div class="col-xs-9 col-sm-10">
+					{{vmab120.ab120.bankinfo}}
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-xs-3 col-sm-2 control-label">Swift:</label>
+				<div class="col-xs-9 col-sm-10">
+					{{vmab120.ab120.swift}}
+				</div>
+			</div>
+			</div>
+		</div>
+		<div class="panel-footer clearfix">
+			<div class="pull-left ng-isolate-scope">
+				<a class="btn btn-danger" ng-click="vmab120.deleteab120(vmab120.ab120.gkey)"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+			</div>
+			<div class="pull-right ng-isolate-scope">
+				<a class="btn btn-primary" href="/#/ab120/Edit/{{vmab120.ab120.gkey}}"><span class="glyphicon glyphicon-pencil"></span> Edit</a>
+				<a class="btn btn-primary" href="/#/ab120"><span class="glyphicon glyphicon-arrow-left"></span> Back to List</a>
+			</div>
+		</div>
+	</div>
+    
+</div>

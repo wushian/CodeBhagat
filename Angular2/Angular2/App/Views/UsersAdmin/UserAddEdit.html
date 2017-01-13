@@ -1,0 +1,92 @@
+<form id="UserAddEdit" name="UserAddEdit">
+    <div class="panel panel-primary" data-ng-controller="UserAddEdit as vm">
+        <div class="panel-heading">{{vm.title}}</div>
+        <div class="panel-body">
+            <div class="form-horizontal">
+                <div class="row has-error">
+                    <span id="error" class="help-block"></span>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-3 col-sm-2 control-label">User Name:</label>
+                    <div class="col-xs-9 col-sm-10">
+                        <input type="text" class="form-control" id="UserName" name="UserName" ng-model="vm.User.UserName" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-3 col-sm-2 control-label">Email:</label>
+                    <div class="col-xs-9 col-sm-10">
+                        <input type="text" class="form-control" id="Email" name="Email" ng-model="vm.User.Email" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-3 col-sm-2 control-label">First Name:</label>
+                    <div class="col-xs-9 col-sm-10">
+                        <input type="text" class="form-control" id="FirstName" name="FirstName" ng-model="vm.User.FirstName" />
+                    </div>
+                </div><div class="form-group">
+                    <label class="col-xs-3 col-sm-2 control-label">Last Name:</label>
+                    <div class="col-xs-9 col-sm-10">
+                        <input type="text" class="form-control" id="LastName" name="LastName" ng-model="vm.User.LastName" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-3 col-sm-2 control-label">Address:</label>
+                    <div class="col-xs-9 col-sm-10">
+                        <input type="text" class="form-control" id="Address" name="Address" ng-model="vm.User.Address" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-3 col-sm-2 control-label">City:</label>
+                    <div class="col-xs-9 col-sm-10">
+                        <input type="text" class="form-control" id="City" name="City" ng-model="vm.User.City" />
+                    </div>
+                </div><div class="form-group">
+                    <label class="col-xs-3 col-sm-2 control-label">Phone Number:</label>
+                    <div class="col-xs-9 col-sm-10">
+                        <input type="text" class="form-control" id="PhoneNumber" name="PhoneNumber" ng-model="vm.User.PhoneNumber" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-3 col-sm-2 control-label">State:</label>
+                    <div class="col-xs-9 col-sm-10">
+                        <input type="text" class="form-control" id="State" name="State" ng-model="vm.User.State" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-3 col-sm-2 control-label">PostalCode:</label>
+                    <div class="col-xs-9 col-sm-10">
+                        <input type="text" class="form-control" id="PostalCode" name="PostalCode" ng-model="vm.User.PostalCode" />
+                    </div>
+                </div>
+                <div class="form-group" ng-hide="vm.User.Id != ''">
+                    <label class="col-xs-3 col-sm-2 control-label">Password:</label>
+                    <div class="col-xs-9 col-sm-10">
+                        <input type="password" class="form-control" id="Password" name="Password" ng-model="vm.User.Password" />
+                    </div>
+                </div>
+                <div class="form-group" ng-hide="vm.User.Id != ''">
+                    <label class="col-xs-3 col-sm-2 control-label">ConfirmPassword:</label>
+                    <div class="col-xs-9 col-sm-10">
+                        <input type="password" class="form-control" id="ConfirmPassword" name="ConfirmPassword" ng-model="vm.User.ConfirmPassword" />
+                    </div>
+                </div>
+                <div>
+					<label class="col-xs-3 col-sm-2 control-label">Application Roles:</label>
+					<span class="col-md-10">
+						<div data-ng-repeat="r in vm.AllRoles">
+                            <input type="checkbox" ng-click="vm.isRoleAdd(r.Name)" id="{{r.Id}}" name="r.Id" data-role-name="{{r.Name}}" />{{r.Name}}
+						</div>
+					</span>
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer clearfix">
+            <div class="pull-right ng-isolate-scope">
+                <button class="btn btn-primary" data-style="expand-right" type="button" ng-click="vm.save()">
+                    <span class="glyphicon glyphicon-floppy-save"></span> Save
+                </button>
+                <a class="btn btn-primary" href="/#/UserAdmin"><span class="glyphicon glyphicon-arrow-left"></span> Cancel</a>
+            </div>
+        </div>
+    </div>
+</form>

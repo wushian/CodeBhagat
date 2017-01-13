@@ -1,0 +1,82 @@
+@model NewWebsite.Models.sa106cData
+
+@{
+    ViewBag.Title = "Create sa106c";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Create Sa106c</h3>
+    @using (Html.BeginForm()) {
+		{
+        <fieldset>
+            <div class="row">
+                    &nbsp;
+            </div>
+            <div class="panel panel-default">
+				<div class="panel-heading"><b>Add Sa106c</b></div>
+                <div class="panel-body">
+					<table>
+					
+			<tr>
+                <td><label for="gkey">Gkey:</label></td>
+				<td>@Html.TextBox("gkey", Model.gkey, new { @id="lblgkey", @class = "form-control", @readonly = "readonly"}) </td>
+            </tr>
+			<tr>
+                <td><label for="serialno">Serialno:</label></td>
+				<td>@Html.TextBox("serialno", Model.serialno, new { @id="txtserialno", @class = "form-control"}) @Html.ValidationMessage("serialno", "", new { @class = "text-danger" }) </td>
+            </tr>
+			<tr>
+                <td><label for="sa106gkey">Sa106gkey:</label></td>
+				<td>@Html.TextBox("sa106gkey", Model.sa106gkey, new { @id="txtsa106gkey", @class = "form-control"}) @Html.ValidationMessage("sa106gkey", "", new { @class = "text-danger" }) </td>
+            </tr>
+			<tr>
+                <td><label for="receiving">Receiving:</label></td>
+				<td>@Html.TextBox("receiving", Model.receiving, new { @id="txtreceiving", @class = "form-control"}) @Html.ValidationMessage("receiving", "", new { @class = "text-danger" }) </td>
+            </tr>
+			<tr>
+                <td><label for="mobilephone">Mobilephone:</label></td>
+				<td>@Html.TextBox("mobilephone", Model.mobilephone, new { @id="txtmobilephone", @class = "form-control"}) @Html.ValidationMessage("mobilephone", "", new { @class = "text-danger" }) </td>
+            </tr>
+			<tr>
+                <td><label for="ba098gkey">Ba098gkey:</label></td>
+				<td>@Html.TextBox("ba098gkey", Model.ba098gkey, new { @id="txtba098gkey", @class = "form-control"}) @Html.ValidationMessage("ba098gkey", "", new { @class = "text-danger" }) </td>
+            </tr>
+			<tr>
+                <td><label for="ba097gkey">Ba097gkey:</label></td>
+				<td>@Html.TextBox("ba097gkey", Model.ba097gkey, new { @id="txtba097gkey", @class = "form-control"}) @Html.ValidationMessage("ba097gkey", "", new { @class = "text-danger" }) </td>
+            </tr>
+			<tr>
+                <td><label for="ba096gkey">Ba096gkey:</label></td>
+				<td>@Html.TextBox("ba096gkey", Model.ba096gkey, new { @id="txtba096gkey", @class = "form-control"}) @Html.ValidationMessage("ba096gkey", "", new { @class = "text-danger" }) </td>
+            </tr>
+			<tr>
+                <td><label for="recaddress">Recaddress:</label></td>
+				<td>@Html.TextArea("recaddress", Model.recaddress.ToString(), new { @id="txtrecaddress", @class = "form-control", @rows=5, @cols=40})@Html.ValidationMessage("recaddress", "", new { @class = "text-danger" }) </td>
+            </tr>
+			<tr>
+                <td><label for="remark">Remark:</label></td>
+				<td>@Html.TextArea("remark", Model.remark.ToString(), new { @id="txtremark", @class = "form-control", @rows=5, @cols=40})@Html.ValidationMessage("remark", "", new { @class = "text-danger" }) </td>
+            </tr>
+			<tr>
+                <td><label for="replication_create">Replication Create:</label></td>
+				<td>@Html.TextBox("replication_create", Model.replication_create, new { @id="txtreplication_create", @class = "form-control"}) @Html.ValidationMessage("replication_create", "", new { @class = "text-danger" }) </td>
+            </tr>
+			<tr>
+                <td><label for="replication_update">Replication Up Date:</label></td>
+				<td>@Html.TextBox("replication_update", Model.replication_update, new { @id="txtreplication_update", @class = "form-control"}) @Html.ValidationMessage("replication_update", "", new { @class = "text-danger" }) </td>
+            </tr>
+					</table>
+				</div>
+		        <div class="panel-footer">
+					<div class="row">
+						<div class="pull-right">
+							<button type="submit" value="Create" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-disk"></span> Save</button>
+							&nbsp;
+							<a href="@Url.Action("Index", "sa106c")" class="btn btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Back to List</a>
+						</div>
+					</div>
+				</div>
+			</div>
+        </fieldset>
+		}
+    }
